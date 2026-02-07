@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build outputs
+bin/
+obj/
+out/
+dist/
+build/
+*.user
+*.userosscache
+*.suo
+*.cache
+*.log
+
+# IDE
+.idea/
+.vs/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.*.local
+appsettings.Development.json
+
+# ML Models
+*.zip
+*.mlnet
+
+# System
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log'
+
+# Test
+coverage/
+TestResults/
+
+# Refs (reference repos)
+refs/

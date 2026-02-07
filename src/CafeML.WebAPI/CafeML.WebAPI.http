@@ -1,0 +1,6 @@
+@CafeML.WebAPI_HostAddress = http://localhost:5181
+
+GET {{CafeML.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
