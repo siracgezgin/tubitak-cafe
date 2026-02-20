@@ -143,7 +143,7 @@ app.MapGet("/api/auth/me", async (CafeDbContext db, HttpContext ctx) =>
 app.MapGet("/api/kullanicilar", async (CafeDbContext db, HttpContext ctx) =>
 {
     var rol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
-    if (rol != "Admin" && rol != "SubAdmin" && rol != "Yonetici")
+    if (rol != "Admin" && rol != "SubAdmin")
         return Results.Forbid();
 
     var users = await db.Users
@@ -160,7 +160,7 @@ app.MapPost("/api/kullanicilar", async (CafeDbContext db, HttpContext ctx) =>
     var callerRol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
     var callerId = int.Parse(ctx.User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
     
-    if (callerRol != "Admin" && callerRol != "SubAdmin" && callerRol != "Yonetici")
+    if (callerRol != "Admin" && callerRol != "SubAdmin")
         return Results.Forbid();
 
     using var reader = new StreamReader(ctx.Request.Body);
@@ -178,7 +178,7 @@ app.MapPost("/api/kullanicilar", async (CafeDbContext db, HttpContext ctx) =>
         return Results.BadRequest(new { Message = "SubAdmin sadece Garson hesabı oluşturabilir" });
     
     // Admin ise SubAdmin veya Garson oluşturabilir (başka Admin oluşturamaz)
-    if ((callerRol == "Admin" || callerRol == "Yonetici") && yeniRol == "Admin")
+    if (callerRol == "Admin" && yeniRol == "Admin")
         return Results.BadRequest(new { Message = "Yeni Admin hesabı oluşturulamaz" });
 
     // Kullanıcı adı benzersiz mi?
@@ -206,14 +206,14 @@ app.MapPut("/api/kullanicilar/{id}", async (CafeDbContext db, int id, HttpContex
     var callerRol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
     var callerId = int.Parse(ctx.User.FindFirst(ClaimTypes.NameIdentifier)!.Value);
     
-    if (callerRol != "Admin" && callerRol != "SubAdmin" && callerRol != "Yonetici")
+    if (callerRol != "Admin" && callerRol != "SubAdmin")
         return Results.Forbid();
 
     var user = await db.Users.FindAsync(id);
     if (user == null) return Results.NotFound();
 
     // SubAdmin, Admin'i düzenleyemez
-    if ((callerRol == "SubAdmin") && (user.Rol == "Admin" || user.Rol == "Yonetici"))
+    if ((callerRol == "SubAdmin") && user.Rol == "Admin")
         return Results.BadRequest(new { Message = "Admin hesabını düzenleyemezsiniz" });
 
     using var reader = new StreamReader(ctx.Request.Body);
@@ -239,14 +239,14 @@ app.MapDelete("/api/kullanicilar/{id}", async (CafeDbContext db, int id, HttpCon
 {
     var callerRol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
     
-    if (callerRol != "Admin" && callerRol != "SubAdmin" && callerRol != "Yonetici")
+    if (callerRol != "Admin" && callerRol != "SubAdmin")
         return Results.Forbid();
 
     var user = await db.Users.FindAsync(id);
     if (user == null) return Results.NotFound();
 
     // SubAdmin, Admin'i silemez
-    if ((callerRol == "SubAdmin") && (user.Rol == "Admin" || user.Rol == "Yonetici"))
+    if ((callerRol == "SubAdmin") && user.Rol == "Admin")
         return Results.BadRequest(new { Message = "Admin hesabını silemezsiniz" });
 
     // Kendini silme
