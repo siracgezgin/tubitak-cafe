@@ -364,7 +364,54 @@ app.MapGet("/api/sales/daily", async (CafeDbContext db) =>
     return Results.Ok(dailySales);
 });
 
-// ========== RESTORAN ENDPOINTS ==========
+app.MapGet("/api/sales/hourly", async (CafeDbContext db) =>
+{
+    var bugun = DateTime.UtcNow.Date;
+    var hourly = await db.Folyolar
+        .Where(f => f.IsIptal == 0 && f.Tarih >= bugun)
+        .GroupBy(f => f.Tarih!.Value.Hour)
+        .Select(g => new { Saat = g.Key, ToplamSatis = g.Sum(f => f.Tutari), SiparisSayisi = g.Count() })
+        .OrderBy(x => x.Saat)
+        .ToListAsync();
+    return Results.Ok(hourly);
+});
+
+app.MapGet("/api/sales/top-urunler", async (CafeDbContext db, string? baslangic, string? bitis, int? limit) =>
+{
+    var start = baslangic != null ? DateTime.Parse(baslangic) : DateTime.UtcNow.AddDays(-30);
+    var end = bitis != null ? DateTime.Parse(bitis).AddDays(1) : DateTime.UtcNow.AddDays(1);
+    var data = await db.FolyoHarlar
+        .Include(h => h.StokKart)
+        .Include(h => h.Folyo)
+        .Where(h => h.IsIptal == 0 && h.Folyo != null && h.Folyo.Tarih >= start && h.Folyo.Tarih <= end && h.Folyo.IsIptal == 0)
+        .ToListAsync();
+    var result = data
+        .GroupBy(h => new { h.StokKartId, Baslik = h.StokKart?.Baslik ?? "Bilinmeyen" })
+        .Select(g => new { UrunId = g.Key.StokKartId, UrunAdi = g.Key.Baslik, ToplamAdet = g.Sum(h => h.Miktar), ToplamCiro = g.Sum(h => h.Tutari) })
+        .OrderByDescending(x => x.ToplamCiro)
+        .Take(limit ?? 10)
+        .ToList();
+    return Results.Ok(result);
+});
+
+app.MapGet("/api/rapor/gun-sonu", async (CafeDbContext db, string? tarih) =>
+{
+    var gun = tarih != null ? DateTime.Parse(tarih).Date : DateTime.UtcNow.Date;
+    var folyolar = await db.Folyolar
+        .Where(f => f.Tarih >= gun && f.Tarih < gun.AddDays(1) && f.IsIptal == 0)
+        .Select(f => new { f.Tutari, f.Odenen })
+        .ToListAsync();
+    return Results.Ok(new
+    {
+        Tarih = gun.ToString("yyyy-MM-dd"),
+        ToplamCiro = folyolar.Sum(f => f.Tutari),
+        ToplamOdeme = folyolar.Sum(f => f.Odenen),
+        AcikHesap = folyolar.Sum(f => Math.Max(0, f.Tutari - f.Odenen)),
+        SiparisSayisi = folyolar.Count
+    });
+});
+
+// ========== RESTORAN ENDPOINTS ===========
 
 app.MapGet("/api/salonlar", async (CafeDbContext db) =>
 {
@@ -406,6 +453,113 @@ app.MapGet("/api/masalar", async (CafeDbContext db) =>
     });
     return Results.Ok(result);
 });
+
+// ========== SALON / MASA CRUD ==========
+
+app.MapPost("/api/salonlar", async (CafeDbContext db, HttpContext ctx) =>
+{
+    var rol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
+    if (rol != "Admin" && rol != "SubAdmin") return Results.Forbid();
+    using var reader = new StreamReader(ctx.Request.Body);
+    var json = System.Text.Json.JsonDocument.Parse(await reader.ReadToEndAsync());
+    var baslik = json.RootElement.GetProperty("baslik").GetString() ?? "Yeni Salon";
+    var salon = new Salon
+    {
+        Kodu = json.RootElement.TryGetProperty("kodu", out var kp) ? kp.GetString() ?? $"S{DateTime.UtcNow.Ticks % 100}" : $"S{DateTime.UtcNow.Ticks % 100}",
+        Baslik = baslik, Enabled = true, SubeId = 1, CompanyId = 1,
+        SortOrder = await db.Salonlar.CountAsync() + 1
+    };
+    db.Salonlar.Add(salon);
+    await db.SaveChangesAsync();
+    return Results.Ok(new { salon.Id, salon.Baslik, salon.Kodu });
+}).RequireAuthorization();
+
+app.MapPut("/api/salonlar/{id}", async (CafeDbContext db, int id, HttpContext ctx) =>
+{
+    var rol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
+    if (rol != "Admin" && rol != "SubAdmin") return Results.Forbid();
+    var salon = await db.Salonlar.FindAsync(id);
+    if (salon == null) return Results.NotFound();
+    using var reader = new StreamReader(ctx.Request.Body);
+    var json = System.Text.Json.JsonDocument.Parse(await reader.ReadToEndAsync());
+    if (json.RootElement.TryGetProperty("baslik", out var b)) salon.Baslik = b.GetString() ?? salon.Baslik;
+    if (json.RootElement.TryGetProperty("renk", out var r)) salon.Renk = r.GetString();
+    await db.SaveChangesAsync();
+    return Results.Ok(new { salon.Id, salon.Baslik });
+}).RequireAuthorization();
+
+app.MapDelete("/api/salonlar/{id}", async (CafeDbContext db, int id, HttpContext ctx) =>
+{
+    var rol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
+    if (rol != "Admin" && rol != "SubAdmin") return Results.Forbid();
+    var salon = await db.Salonlar.FindAsync(id);
+    if (salon == null) return Results.NotFound();
+    var masaSayisi = await db.Masalar.CountAsync(m => m.SalonId == id && m.Enabled);
+    if (masaSayisi > 0) return Results.BadRequest(new { Message = $"Salonda {masaSayisi} masa var. Önce masaları silin." });
+    salon.Enabled = false;
+    await db.SaveChangesAsync();
+    return Results.Ok(new { Message = "Salon silindi" });
+}).RequireAuthorization();
+
+app.MapPost("/api/masalar", async (CafeDbContext db, HttpContext ctx) =>
+{
+    var rol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
+    if (rol != "Admin" && rol != "SubAdmin") return Results.Forbid();
+    using var reader = new StreamReader(ctx.Request.Body);
+    var json = System.Text.Json.JsonDocument.Parse(await reader.ReadToEndAsync());
+    var salonId = json.RootElement.GetProperty("salonId").GetInt32();
+    var baslik = json.RootElement.GetProperty("baslik").GetString() ?? "Yeni Masa";
+    var salon = await db.Salonlar.FindAsync(salonId);
+    if (salon == null) return Results.BadRequest(new { Message = "Salon bulunamadı" });
+    var masaCount = await db.Masalar.CountAsync(m => m.SalonId == salonId && m.Enabled);
+    var masa = new Masa
+    {
+        SalonId = salonId, Baslik = baslik,
+        Kodu = $"M{DateTime.UtcNow.Ticks % 10000:D4}",
+        QrKod = $"QR-{salon.Kodu}-{masaCount + 1:D2}",
+        SortOrder = masaCount + 1, Enabled = true, SubeId = 1, CompanyId = 1
+    };
+    db.Masalar.Add(masa);
+    await db.SaveChangesAsync();
+    return Results.Ok(new { masa.Id, masa.Baslik, masa.QrKod });
+}).RequireAuthorization();
+
+app.MapPut("/api/masalar/{id}", async (CafeDbContext db, int id, HttpContext ctx) =>
+{
+    var rol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
+    if (rol != "Admin" && rol != "SubAdmin") return Results.Forbid();
+    var masa = await db.Masalar.FindAsync(id);
+    if (masa == null) return Results.NotFound();
+    using var reader = new StreamReader(ctx.Request.Body);
+    var json = System.Text.Json.JsonDocument.Parse(await reader.ReadToEndAsync());
+    if (json.RootElement.TryGetProperty("baslik", out var b)) masa.Baslik = b.GetString() ?? masa.Baslik;
+    await db.SaveChangesAsync();
+    return Results.Ok(new { masa.Id, masa.Baslik });
+}).RequireAuthorization();
+
+app.MapDelete("/api/masalar/{id}", async (CafeDbContext db, int id, HttpContext ctx) =>
+{
+    var rol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
+    if (rol != "Admin" && rol != "SubAdmin") return Results.Forbid();
+    var masa = await db.Masalar.FindAsync(id);
+    if (masa == null) return Results.NotFound();
+    if (await db.Folyolar.AnyAsync(f => f.MasaId == id && f.IsKapali == 0))
+        return Results.BadRequest(new { Message = "Açık hesap var. Önce kapatın." });
+    masa.Enabled = false;
+    await db.SaveChangesAsync();
+    return Results.Ok(new { Message = "Masa silindi" });
+}).RequireAuthorization();
+
+app.MapPost("/api/masalar/{id}/yeni-qr", async (CafeDbContext db, int id, HttpContext ctx) =>
+{
+    var rol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
+    if (rol != "Admin" && rol != "SubAdmin") return Results.Forbid();
+    var masa = await db.Masalar.Include(m => m.Salon).FirstOrDefaultAsync(m => m.Id == id);
+    if (masa == null) return Results.NotFound();
+    masa.QrKod = $"QR-{masa.Salon?.Kodu ?? "M"}-{id}-{DateTime.UtcNow.Ticks % 9999}";
+    await db.SaveChangesAsync();
+    return Results.Ok(new { Message = "QR kod yenilendi", YeniQrKod = masa.QrKod });
+}).RequireAuthorization();
 
 // ========== ÖDEME / ADİSYON SİSTEMİ ==========
 
@@ -832,7 +986,7 @@ app.MapGet("/api/masalar/qr", async (CafeDbContext db) =>
 app.MapPost("/api/urunler", async (CafeDbContext db, HttpContext ctx) =>
 {
     var rol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
-    if (rol != "Yonetici") return Results.Forbid();
+    if (rol != "Admin" && rol != "SubAdmin") return Results.Forbid();
 
     using var reader = new StreamReader(ctx.Request.Body);
     var body = await reader.ReadToEndAsync();
@@ -859,7 +1013,7 @@ app.MapPost("/api/urunler", async (CafeDbContext db, HttpContext ctx) =>
 app.MapPut("/api/urunler/{id}", async (CafeDbContext db, int id, HttpContext ctx) =>
 {
     var rol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
-    if (rol != "Yonetici") return Results.Forbid();
+    if (rol != "Admin" && rol != "SubAdmin") return Results.Forbid();
 
     var urun = await db.StokKartlar.FindAsync(id);
     if (urun == null) return Results.NotFound();
@@ -891,7 +1045,7 @@ app.MapPut("/api/urunler/{id}", async (CafeDbContext db, int id, HttpContext ctx
 app.MapDelete("/api/urunler/{id}", async (CafeDbContext db, int id, HttpContext ctx) =>
 {
     var rol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
-    if (rol != "Yonetici") return Results.Forbid();
+    if (rol != "Admin" && rol != "SubAdmin") return Results.Forbid();
 
     var urun = await db.StokKartlar.FindAsync(id);
     if (urun == null) return Results.NotFound();
@@ -905,7 +1059,7 @@ app.MapDelete("/api/urunler/{id}", async (CafeDbContext db, int id, HttpContext 
 app.MapPost("/api/urunler/{id}/resim", async (CafeDbContext db, int id, HttpContext ctx) =>
 {
     var rol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
-    if (rol != "Yonetici") return Results.Forbid();
+    if (rol != "Admin" && rol != "SubAdmin") return Results.Forbid();
 
     var urun = await db.StokKartlar.FindAsync(id);
     if (urun == null) return Results.NotFound();
@@ -938,7 +1092,7 @@ app.MapPost("/api/urunler/{id}/resim", async (CafeDbContext db, int id, HttpCont
 app.MapPost("/api/urunler/siralama", async (CafeDbContext db, HttpContext ctx) =>
 {
     var rol = ctx.User.FindFirst(ClaimTypes.Role)?.Value;
-    if (rol != "Yonetici") return Results.Forbid();
+    if (rol != "Admin" && rol != "SubAdmin") return Results.Forbid();
 
     using var reader = new StreamReader(ctx.Request.Body);
     var body = await reader.ReadToEndAsync();
@@ -1266,7 +1420,7 @@ app.MapGet("/api/mutfak", async (CafeDbContext db) =>
         })
         .ToListAsync();
     return Results.Ok(siparisler);
-});
+}).RequireAuthorization();
 
 app.MapGet("/api/bar", async (CafeDbContext db) =>
 {
@@ -1289,7 +1443,7 @@ app.MapGet("/api/bar", async (CafeDbContext db) =>
         })
         .ToListAsync();
     return Results.Ok(siparisler);
-});
+}).RequireAuthorization();
 
 // Sipariş Tamamla (Mutfak/Bar)
 app.MapPost("/api/siparisler/{id}/tamamla", async (CafeDbContext db, int id, HttpContext ctx) =>
@@ -1300,6 +1454,26 @@ app.MapPost("/api/siparisler/{id}/tamamla", async (CafeDbContext db, int id, Htt
     har.IsKapali = 1;
     await db.SaveChangesAsync();
     return Results.Ok(new { Message = "Sipariş tamamlandı" });
+}).RequireAuthorization();
+
+// Sipariş Satırı İptal
+app.MapPost("/api/siparisler/{id}/iptal", async (CafeDbContext db, int id) =>
+{
+    var har = await db.FolyoHarlar
+        .Include(h => h.Folyo)
+        .FirstOrDefaultAsync(h => h.Id == id);
+    if (har == null) return Results.NotFound();
+    if (har.IsKapali == 1) return Results.BadRequest(new { Message = "Bu kalem zaten kapatılmış" });
+    var iptalTutar = har.Tutari;
+    har.IsIptal = 1;
+    har.IsKapali = 1;
+    if (har.Folyo != null)
+    {
+        har.Folyo.Tutari = Math.Max(0, har.Folyo.Tutari - iptalTutar);
+        har.Folyo.UpdatedAt = DateTime.UtcNow;
+    }
+    await db.SaveChangesAsync();
+    return Results.Ok(new { Message = "Kalem iptal edildi", IptalTutar = iptalTutar });
 }).RequireAuthorization();
 
 app.MapGet("/api/siparisler/aktif", async (CafeDbContext db) =>
