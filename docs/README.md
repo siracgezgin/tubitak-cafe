@@ -21,7 +21,7 @@ Bu klasör, CafeML projesinin teknik dokümantasyonunu içerir. Aşağıdaki sı
 
 ---
 
-## ⚡ Hızlı Başlangıç
+## Hızlı Başlangıç
 
 ```bash
 # 1. Backend (InMemory mod - PostgreSQL gerekmez)
