@@ -4,7 +4,7 @@ Bu klasör, CafeML projesinin teknik dokümantasyonunu içerir. Aşağıdaki sı
 
 ---
 
-## 📚 Okuma Sırası
+## Okuma Sırası
 
 | # | Dosya | İçerik |
 |---|---|---|
