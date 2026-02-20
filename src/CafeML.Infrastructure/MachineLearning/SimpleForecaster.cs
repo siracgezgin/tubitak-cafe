@@ -112,7 +112,7 @@ public class SimpleForecaster : ISalesForecaster
     public Task RetrainModelAsync()
     {
         // Simple forecaster stateless olduğu için eğitim gerektirmez
-        Console.WriteLine("✅ Model güncellendi (SimpleForecaster)");
+        Console.WriteLine("[OK] Model güncellendi (SimpleForecaster)");
         return Task.CompletedTask;
     }
 

@@ -124,11 +124,11 @@ public class SsaSalesForecaster : ISalesForecaster
         
         if (salesData.Count < 30)
         {
-            Console.WriteLine("⚠️ Yeterli veri yok. En az 30 günlük veri gerekli.");
+            Console.WriteLine("[WARN] Yeterli veri yok. En az 30 günlük veri gerekli.");
             return;
         }
 
-        Console.WriteLine($"📊 {salesData.Count} günlük veriyle model eğitiliyor...");
+        Console.WriteLine($"[INFO] {salesData.Count} günlük veriyle model eğitiliyor...");
 
         var pipeline = CreateSsaPipeline(salesData.Count);
         var dataView = _mlContext.Data.LoadFromEnumerable(salesData);
@@ -136,7 +136,7 @@ public class SsaSalesForecaster : ISalesForecaster
         _model = pipeline.Fit(dataView);
         _predictionEngine = _model.CreateTimeSeriesEngine<SalesData, SalesPrediction>(_mlContext);
         
-        Console.WriteLine("✅ SSA modeli başarıyla eğitildi!");
+        Console.WriteLine("[OK] SSA modeli başarıyla eğitildi!");
     }
 
     /// <summary>

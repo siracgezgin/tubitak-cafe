@@ -79,15 +79,17 @@ public class SyntheticDataGenerator
             {
                 masalar.Add(new Masa
                 {
-                    Id = masaId++,
+                    Id = masaId,
                     SubeId = 1,
                     SalonId = salon.Id,
-                    Kodu = $"M{masaId - 1:D3}",
+                    Kodu = $"M{masaId:D3}",
                     Baslik = $"Masa {i}",
                     SortOrder = i,
                     Enabled = true,
-                    CompanyId = 1
+                    CompanyId = 1,
+                    QrKod = $"QR-{salon.Kodu}-{i:D2}"
                 });
+                masaId++;
             }
         }
 

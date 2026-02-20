@@ -23,6 +23,9 @@ public class CafeDbContext : DbContext
     public DbSet<Menu> Menuler => Set<Menu>();
     public DbSet<MenuGrup> MenuGruplar => Set<MenuGrup>();
     public DbSet<MenuStokKart> MenuStokKartlar => Set<MenuStokKart>();
+    public DbSet<User> Users => Set<User>();
+    public DbSet<SiparisTalep> SiparisTalepler => Set<SiparisTalep>();
+    public DbSet<SiparisTalepSatir> SiparisTalepSatirlar => Set<SiparisTalepSatir>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -85,6 +88,8 @@ public class CafeDbContext : DbContext
             entity.Property(e => e.SalonId).HasColumnName("salon_id");
             entity.Property(e => e.Kodu).HasColumnName("kodu");
             entity.Property(e => e.Baslik).HasColumnName("baslik");
+            entity.Property(e => e.QrKod).HasColumnName("qr_kod").HasMaxLength(50);
+            entity.HasIndex(e => e.QrKod).IsUnique();
 
             entity.HasOne(e => e.Salon).WithMany(s => s.Masalar).HasForeignKey(e => e.SalonId);
         });
@@ -149,6 +154,44 @@ public class CafeDbContext : DbContext
 
             entity.HasOne(e => e.MenuGrup).WithMany(m => m.MenuStokKartlar).HasForeignKey(e => e.MenuGrupId);
             entity.HasOne(e => e.StokKart).WithMany(s => s.MenuStokKartlar).HasForeignKey(e => e.StokKartId);
+        });
+
+        // User konfigürasyonu
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.ToTable("users");
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Kullanici).HasColumnName("kullanici").HasMaxLength(50);
+            entity.Property(e => e.SifreHash).HasColumnName("sifre_hash").HasMaxLength(256);
+            entity.Property(e => e.Ad).HasColumnName("ad").HasMaxLength(100);
+            entity.Property(e => e.Soyad).HasColumnName("soyad").HasMaxLength(100);
+            entity.Property(e => e.Rol).HasColumnName("rol").HasMaxLength(20);
+            entity.HasIndex(e => e.Kullanici).IsUnique();
+        });
+
+        // SiparisTalep konfigürasyonu
+        modelBuilder.Entity<SiparisTalep>(entity =>
+        {
+            entity.ToTable("siparis_talepler");
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.MasaId).HasColumnName("masa_id");
+            entity.Property(e => e.Durum).HasColumnName("durum").HasMaxLength(20);
+            entity.Property(e => e.OnaylayanUserId).HasColumnName("onaylayan_user_id");
+            entity.Property(e => e.OlusturulmaTarihi).HasColumnName("olusturulma_tarihi");
+            entity.HasOne(e => e.Masa).WithMany().HasForeignKey(e => e.MasaId);
+            entity.HasOne(e => e.OnaylayanUser).WithMany().HasForeignKey(e => e.OnaylayanUserId);
+        });
+
+        // SiparisTalepSatir konfigürasyonu
+        modelBuilder.Entity<SiparisTalepSatir>(entity =>
+        {
+            entity.ToTable("siparis_talep_satirlar");
+            entity.HasKey(e => e.Id);
+            entity.Property(e => e.SiparisTalepId).HasColumnName("siparis_talep_id");
+            entity.Property(e => e.StokKartId).HasColumnName("stokkart_id");
+            entity.HasOne(e => e.SiparisTalep).WithMany(t => t.Satirlar).HasForeignKey(e => e.SiparisTalepId);
+            entity.HasOne(e => e.StokKart).WithMany().HasForeignKey(e => e.StokKartId);
         });
     }
 }

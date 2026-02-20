@@ -15,8 +15,14 @@ public class Masa
     public int SortOrder { get; set; } = 9999;
     public bool Enabled { get; set; } = true;
     public int CompanyId { get; set; }
+    
+    /// <summary>
+    /// Her masanın benzersiz QR kodu - QR menüye erişim için kullanılır
+    /// </summary>
+    public string QrKod { get; set; } = string.Empty;
 
     // Navigation properties
     public virtual Salon? Salon { get; set; }
     public virtual ICollection<Folyo> Folyolar { get; set; } = new List<Folyo>();
 }
+

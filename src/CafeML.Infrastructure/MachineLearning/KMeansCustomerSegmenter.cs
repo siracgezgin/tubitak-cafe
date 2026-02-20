@@ -152,7 +152,7 @@ public class KMeansCustomerSegmenter : ICustomerSegmenter
     /// </summary>
     private Task TrainModelAsync(List<CustomerRfmData> rfmData)
     {
-        Console.WriteLine($"📊 {rfmData.Count} müşteri ile K-Means segmentasyonu eğitiliyor...");
+        Console.WriteLine($"[INFO] {rfmData.Count} müşteri ile K-Means segmentasyonu eğitiliyor...");
 
         var dataView = _mlContext.Data.LoadFromEnumerable(rfmData);
 
@@ -168,7 +168,7 @@ public class KMeansCustomerSegmenter : ICustomerSegmenter
         _model = pipeline.Fit(dataView);
         _predictionEngine = _mlContext.Model.CreatePredictionEngine<CustomerRfmData, CustomerClusterPrediction>(_model);
         
-        Console.WriteLine("✅ K-Means segmentasyonu tamamlandı!");
+        Console.WriteLine("[OK] K-Means segmentasyonu tamamlandı!");
         
         return Task.CompletedTask;
     }
@@ -180,19 +180,19 @@ public class KMeansCustomerSegmenter : ICustomerSegmenter
     {
         // RFM değerlerine göre anlamlı segment isimleri
         if (customer.Recency <= 30 && customer.Frequency >= 10 && customer.Monetary >= 1000)
-            return "🏆 VIP - En Değerli";
+            return "VIP - En Değerli";
         
         if (customer.Recency <= 60 && customer.Frequency >= 5)
-            return "💎 Sadık Müşteri";
+            return "Sadık Müşteri";
         
         if (customer.Recency > 180)
-            return "😴 Uyuyan Müşteri";
+            return "Uyuyan Müşteri";
         
         if (customer.Recency > 90 && customer.Frequency >= 3)
-            return "⚠️ Risk Altında";
+            return "Risk Altında";
         
         if (customer.Frequency <= 2)
-            return "🌱 Yeni Müşteri";
+            return "Yeni Müşteri";
         
         return SegmentNames.GetValueOrDefault(clusterId, $"Segment {clusterId}");
     }

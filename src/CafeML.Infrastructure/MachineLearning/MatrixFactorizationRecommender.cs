@@ -143,7 +143,7 @@ public class MatrixFactorizationRecommender : IProductRecommender
     /// </summary>
     private async Task TrainModelAsync()
     {
-        Console.WriteLine("📊 Ürün öneri modeli eğitiliyor (Matrix Factorization)...");
+        Console.WriteLine("[INFO] Ürün öneri modeli eğitiliyor (Matrix Factorization)...");
 
         // Müşteri-ürün satın alma matrisini oluştur
         var purchaseData = await _dbContext.FolyoHarlar
@@ -160,7 +160,7 @@ public class MatrixFactorizationRecommender : IProductRecommender
 
         if (purchaseData.Count < 10)
         {
-            Console.WriteLine("⚠️ Yeterli satın alma verisi yok.");
+            Console.WriteLine("[WARN] Yeterli satın alma verisi yok.");
             return;
         }
 
@@ -200,6 +200,6 @@ public class MatrixFactorizationRecommender : IProductRecommender
         _model = pipeline.Fit(dataView);
         _predictionEngine = _mlContext.Model.CreatePredictionEngine<ProductEntry, ProductPrediction>(_model);
 
-        Console.WriteLine($"✅ Öneri modeli eğitildi ({purchaseData.Count} satın alma kaydı)");
+        Console.WriteLine($"[OK] Öneri modeli eğitildi ({purchaseData.Count} satın alma kaydı)");
     }
 }
