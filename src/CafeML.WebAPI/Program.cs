@@ -88,6 +88,24 @@ app.UseAuthorization();
 app.MapControllers();
 app.MapHub<OrderHub>("/hubs/orders");
 
+// ========== STARTUP: KULLANICI SEED ==========
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<CafeDbContext>();
+    db.Database.EnsureCreated();
+    if (!db.Users.Any())
+    {
+        db.Users.AddRange(
+            new User { Kullanici = "admin",   SifreHash = BCrypt.Net.BCrypt.HashPassword("admin123"),  Ad = "Sirac",  Soyad = "Yönetici", Rol = "Admin" },
+            new User { Kullanici = "ortak1",  SifreHash = BCrypt.Net.BCrypt.HashPassword("ortak123"),  Ad = "Erdem",  Soyad = "Ortak",    Rol = "SubAdmin", OlusturanId = 1 },
+            new User { Kullanici = "garson1", SifreHash = BCrypt.Net.BCrypt.HashPassword("garson123"), Ad = "Mehmet", Soyad = "Demir",    Rol = "Garson",   OlusturanId = 1 },
+            new User { Kullanici = "garson2", SifreHash = BCrypt.Net.BCrypt.HashPassword("garson123"), Ad = "Ayşe",   Soyad = "Kaya",     Rol = "Garson",   OlusturanId = 2 }
+        );
+        db.SaveChanges();
+        Console.WriteLine("[OK] Varsayılan kullanıcılar oluşturuldu (admin/admin123)");
+    }
+}
+
 // ========== AUTH ENDPOINTS ==========
 
 app.MapPost("/api/auth/login", async (CafeDbContext db, HttpContext ctx) =>
