@@ -43,6 +43,7 @@ builder.Services.AddTransient<SyntheticDataGenerator>();
 builder.Services.AddScoped<ISalesForecaster, SimpleForecaster>();
 builder.Services.AddScoped<ICustomerSegmenter, KMeansCustomerSegmenter>();
 builder.Services.AddScoped<IProductRecommender, MatrixFactorizationRecommender>();
+builder.Services.AddSingleton<IAprioriRecommender, AprioriRecommender>();
 
 // CORS for React frontend
 builder.Services.AddCors(options =>
@@ -951,8 +952,88 @@ app.MapGet("/api/recommendations/product/{productId}", async (IProductRecommende
     }
 });
 
+// ========== APRİORİ / MARKET BASKET ENDPOINTS ==========
+
+// En güçlü birliktelik kuralları
+app.MapGet("/api/recommendations/rules", async (IAprioriRecommender apriori, int? top) =>
+{
+    try
+    {
+        var rules = await apriori.GetTopRulesAsync(top ?? 20);
+        return Results.Ok(new
+        {
+            ToplamKural = rules.Count(),
+            Kurallar = rules.Select(r => new
+            {
+                r.Antecedent,
+                r.Consequent,
+                Support    = Math.Round(r.Support    * 100, 1),
+                Confidence = Math.Round(r.Confidence * 100, 1),
+                r.Lift,
+                r.ActionText
+            })
+        });
+    }
+    catch (Exception ex) { return Results.Problem(ex.Message); }
+});
+
+// Sepet bazlı öneri: ?urunler=1,2,3
+app.MapGet("/api/recommendations/basket", async (IAprioriRecommender apriori, string? urunler, int? top) =>
+{
+    try
+    {
+        var ids = (urunler ?? "")
+            .Split(',', StringSplitOptions.RemoveEmptyEntries)
+            .Select(s => int.TryParse(s.Trim(), out var v) ? v : 0)
+            .Where(v => v > 0)
+            .ToList();
+
+        if (!ids.Any())
+            return Results.BadRequest(new { Error = "urunler parametresi gerekli. Örn: ?urunler=1,3,7" });
+
+        var recs = await apriori.RecommendFromBasketAsync(ids, top ?? 5);
+        return Results.Ok(new
+        {
+            SepetUrunleri = ids,
+            Oneriler = recs.Select(r => new
+            {
+                r.ProductId,
+                r.ProductName,
+                Confidence = Math.Round(r.Confidence * 100, 1),
+                r.Lift,
+                r.Reason
+            })
+        });
+    }
+    catch (Exception ex) { return Results.Problem(ex.Message); }
+});
+
+// En sık birlikte satılan çiftler
+app.MapGet("/api/recommendations/pairs", async (IAprioriRecommender apriori, int? top) =>
+{
+    try
+    {
+        var pairs = await apriori.GetTopPairsAsync(top ?? 15);
+        return Results.Ok(pairs.Select(p => new
+        {
+            p.ProductAName,
+            p.ProductBName,
+            p.Count,
+            Support = Math.Round(p.Support * 100, 1)
+        }));
+    }
+    catch (Exception ex) { return Results.Problem(ex.Message); }
+});
+
+// Apriori modelini yeniden eğit
+app.MapPost("/api/recommendations/rules/retrain", async (IAprioriRecommender apriori) =>
+{
+    await apriori.RetrainAsync();
+    return Results.Ok(new { Message = "Apriori modeli yeniden eğitildi." });
+});
+
 Console.WriteLine("[INFO] CafeML API başlatılıyor...");
-Console.WriteLine("[INFO] ML Servisleri: Satış Tahmini + Segmentasyon + Öneri Sistemi");
+Console.WriteLine("[INFO] ML Servisleri: Satış Tahmini + Segmentasyon + Öneri Sistemi + Apriori");
 Console.WriteLine("[INFO] SignalR Hub: /hubs/orders");
 
 // ========== QR KOD YÖNETIM ENDPOINTS ==========
