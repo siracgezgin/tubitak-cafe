@@ -1,0 +1,158 @@
+@page "/login"
+@using MudBlazor
+@layout NoLayout
+@inject AuthStateService Auth
+@inject NavigationManager Nav
+@inject ISnackbar Snackbar
+
+<div class="login-container">
+    <div class="login-card">
+        <div class="logo-section">
+            <MudIcon Icon="@Icons.Material.Filled.PointOfSale" Size="Size.Large" Color="Color.Primary" Style="font-size: 3rem;" />
+            <MudText Typo="Typo.h5" Class="mt-2 font-bold">XPos Sistem</MudText>
+            <MudText Typo="Typo.caption" Color="Color.Secondary">Personel Girişi</MudText>
+        </div>
+
+        @if (!showPinPad)
+        {
+            <!-- Telefon numarası girişi -->
+            <div class="phone-input-section">
+                <MudTextField @bind-Value="phone"
+                              Label="Telefon Numarası"
+                              Variant="Variant.Outlined"
+                              InputType="InputType.Tel"
+                              Class="mb-4"
+                              Style="color:white;"
+                              AdornmentIcon="@Icons.Material.Filled.Phone"
+                              Adornment="Adornment.Start" />
+                <MudButton Variant="Variant.Filled"
+                           Color="Color.Primary"
+                           FullWidth="true"
+                           OnClick="@ProceedToPin"
+                           Size="Size.Large">
+                    Devam Et
+                </MudButton>
+            </div>
+        }
+        else
+        {
+            <!-- PIN pad -->
+            <MudText Typo="Typo.caption" Color="Color.Secondary" Class="mb-2">@phone için şifre giriniz</MudText>
+
+            <div class="pin-display">
+                @for (int i = 0; i < 4; i++)
+                {
+                    <div class="pin-dot @(pin.Length > i ? "active" : "")"></div>
+                }
+            </div>
+
+            <div class="numpad">
+                @for (int i = 1; i <= 9; i++)
+                {
+                    var n = i.ToString();
+                    <button @onclick="() => AppendDigit(n)">@n</button>
+                }
+                <button class="action" @onclick="BackToPhone">↩</button>
+                <button @onclick='() => AppendDigit("0")'>0</button>
+                <button class="action" @onclick="Delete"><MudIcon Icon="@Icons.Material.Filled.Backspace" Size="Size.Small" /></button>
+            </div>
+        }
+
+        @if (isLoggingIn)
+        {
+            <div class="loading-overlay">
+                <MudProgressCircular Indeterminate="true" Color="Color.Primary" />
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .login-container { height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #0F172A; }
+    .login-card { width: 100%; max-width: 320px; padding: 24px; text-align: center; }
+    .logo-section { margin-bottom: 24px; color: white; }
+    .font-bold { font-weight: 800; }
+    .phone-input-section { margin-bottom: 16px; }
+    
+    .pin-display { display: flex; justify-content: center; gap: 16px; margin-bottom: 32px; height: 16px; }
+    .pin-dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.2); transition: all 0.2s; }
+    .pin-dot.active { background-color: #3B82F6; border-color: #3B82F6; transform: scale(1.2); box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+
+    .numpad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .numpad button { height: 64px; border-radius: 50%; background-color: #1E293B; border: none; font-size: 24px; font-weight: 600; color: white; transition: background 0.2s; -webkit-tap-highlight-color: transparent; }
+    .numpad button:active { background-color: #334155; }
+    .numpad button.action { background-color: rgba(255,255,255,0.05); font-size: 18px; }
+
+    .loading-overlay { margin-top: 24px; }
+</style>
+
+@code {
+    private string phone = "";
+    private string pin = "";
+    private bool showPinPad = false;
+    private bool isLoggingIn = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Daha önce oturum açıldıysa doğrudan ana sayfaya yönlendir
+        await Auth.TryRestoreSession();
+        if (Auth.IsLoggedIn)
+            Nav.NavigateTo("/");
+    }
+
+    private void ProceedToPin()
+    {
+        if (string.IsNullOrWhiteSpace(phone))
+        {
+            Snackbar.Add("Lütfen telefon numaranızı giriniz.", Severity.Warning);
+            return;
+        }
+        pin = "";
+        showPinPad = true;
+    }
+
+    private void BackToPhone()
+    {
+        showPinPad = false;
+        pin = "";
+    }
+
+    private async Task AppendDigit(string digit)
+    {
+        if (pin.Length < 4)
+        {
+            pin += digit;
+            if (pin.Length == 4)
+            {
+                await PerformLogin();
+            }
+        }
+    }
+
+    private void Delete() { if (pin.Length > 0) pin = pin[..^1]; }
+
+    private async Task PerformLogin()
+    {
+        isLoggingIn = true;
+        StateHasChanged();
+
+        await Task.Delay(200);
+
+        var success = await Auth.TryLogin(phone, pin);
+        if (success)
+        {
+            Nav.NavigateTo("/");
+        }
+        else
+        {
+            Snackbar.Add("Geçersiz telefon veya şifre!", Severity.Error);
+            pin = "";
+        }
+
+        isLoggingIn = false;
+        StateHasChanged();
+    }
+}
+
+    }
+}

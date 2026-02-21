@@ -1,0 +1,216 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/sirac/tbtk/src/CafeML.Application/CafeML.Application.csproj": {}
+  },
+  "projects": {
+    "/home/sirac/tbtk/src/CafeML.Application/CafeML.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/sirac/tbtk/src/CafeML.Application/CafeML.Application.csproj",
+        "projectName": "CafeML.Application",
+        "projectPath": "/home/sirac/tbtk/src/CafeML.Application/CafeML.Application.csproj",
+        "packagesPath": "/home/sirac/.nuget/packages/",
+        "outputPath": "/home/sirac/tbtk/src/CafeML.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/sirac/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/sirac/tbtk/src/CafeML.Core/CafeML.Core.csproj": {
+                "projectPath": "/home/sirac/tbtk/src/CafeML.Core/CafeML.Core.csproj"
+              },
+              "/home/sirac/tbtk/src/CafeML.Infrastructure/CafeML.Infrastructure.csproj": {
+                "projectPath": "/home/sirac/tbtk/src/CafeML.Infrastructure/CafeML.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.123/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/sirac/tbtk/src/CafeML.Core/CafeML.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/sirac/tbtk/src/CafeML.Core/CafeML.Core.csproj",
+        "projectName": "CafeML.Core",
+        "projectPath": "/home/sirac/tbtk/src/CafeML.Core/CafeML.Core.csproj",
+        "packagesPath": "/home/sirac/.nuget/packages/",
+        "outputPath": "/home/sirac/tbtk/src/CafeML.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/sirac/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.123/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/sirac/tbtk/src/CafeML.Infrastructure/CafeML.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/sirac/tbtk/src/CafeML.Infrastructure/CafeML.Infrastructure.csproj",
+        "projectName": "CafeML.Infrastructure",
+        "projectPath": "/home/sirac/tbtk/src/CafeML.Infrastructure/CafeML.Infrastructure.csproj",
+        "packagesPath": "/home/sirac/.nuget/packages/",
+        "outputPath": "/home/sirac/tbtk/src/CafeML.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/sirac/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/home/sirac/tbtk/src/CafeML.Core/CafeML.Core.csproj": {
+                "projectPath": "/home/sirac/tbtk/src/CafeML.Core/CafeML.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Bogus": {
+              "target": "Package",
+              "version": "[35.6.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.*, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.*, )"
+            },
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.ML.AutoML": {
+              "target": "Package",
+              "version": "[0.23.0, )"
+            },
+            "Microsoft.ML.Recommender": {
+              "target": "Package",
+              "version": "[0.23.0, )"
+            },
+            "Microsoft.ML.TimeSeries": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Nager.Date": {
+              "target": "Package",
+              "version": "[2.14.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.*, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.123/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

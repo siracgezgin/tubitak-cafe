@@ -1,0 +1,1730 @@
+[
+  {
+    "tetikleyici": "Hamburger Menü, Lahmacun",
+    "oneri": "Ayran, Patates Kızartması",
+    "confidence": 0.741,
+    "lift": 9.037,
+    "support": 0.051,
+    "oneri_metni": "'Hamburger Menü, Lahmacun' ile birlikte 'Ayran, Patates Kızartması' de ekleyin? (%74 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Patates Kızartması",
+    "oneri": "Hamburger Menü, Lahmacun",
+    "confidence": 0.628,
+    "lift": 9.037,
+    "support": 0.051,
+    "oneri_metni": "'Ayran, Patates Kızartması' ile birlikte 'Hamburger Menü, Lahmacun' de ekleyin? (%62 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, Patates Kızartması",
+    "oneri": "Ayran, Hamburger Menü",
+    "confidence": 0.741,
+    "lift": 8.982,
+    "support": 0.051,
+    "oneri_metni": "'Lahmacun, Patates Kızartması' ile birlikte 'Ayran, Hamburger Menü' de ekleyin? (%74 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Hamburger Menü",
+    "oneri": "Lahmacun, Patates Kızartması",
+    "confidence": 0.624,
+    "lift": 8.982,
+    "support": 0.051,
+    "oneri_metni": "'Ayran, Hamburger Menü' ile birlikte 'Lahmacun, Patates Kızartması' de ekleyin? (%62 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Hamburger Menü",
+    "oneri": "Kola, Lahmacun",
+    "confidence": 0.661,
+    "lift": 8.927,
+    "support": 0.054,
+    "oneri_metni": "'Ayran, Hamburger Menü' ile birlikte 'Kola, Lahmacun' de ekleyin? (%66 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kola, Lahmacun",
+    "oneri": "Ayran, Hamburger Menü",
+    "confidence": 0.736,
+    "lift": 8.927,
+    "support": 0.054,
+    "oneri_metni": "'Kola, Lahmacun' ile birlikte 'Ayran, Hamburger Menü' de ekleyin? (%73 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Kola",
+    "oneri": "Hamburger Menü, Lahmacun",
+    "confidence": 0.619,
+    "lift": 8.911,
+    "support": 0.054,
+    "oneri_metni": "'Ayran, Kola' ile birlikte 'Hamburger Menü, Lahmacun' de ekleyin? (%61 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Lahmacun",
+    "oneri": "Ayran, Kola",
+    "confidence": 0.784,
+    "lift": 8.911,
+    "support": 0.054,
+    "oneri_metni": "'Hamburger Menü, Lahmacun' ile birlikte 'Ayran, Kola' de ekleyin? (%78 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Kola, Patates Kızartması",
+    "oneri": "Hamburger Menü",
+    "confidence": 0.939,
+    "lift": 8.197,
+    "support": 0.053,
+    "oneri_metni": "'Ayran, Kola, Patates Kızartması' ile birlikte 'Hamburger Menü' de ekleyin? (%93 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Hamburger Menü",
+    "oneri": "Kola, Patates Kızartması",
+    "confidence": 0.648,
+    "lift": 7.908,
+    "support": 0.053,
+    "oneri_metni": "'Ayran, Hamburger Menü' ile birlikte 'Kola, Patates Kızartması' de ekleyin? (%64 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kola, Patates Kızartması",
+    "oneri": "Ayran, Hamburger Menü",
+    "confidence": 0.652,
+    "lift": 7.908,
+    "support": 0.053,
+    "oneri_metni": "'Kola, Patates Kızartması' ile birlikte 'Ayran, Hamburger Menü' de ekleyin? (%65 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü",
+    "oneri": "Kola, Patates Kızartması",
+    "confidence": 0.646,
+    "lift": 7.882,
+    "support": 0.074,
+    "oneri_metni": "'Hamburger Menü' ile birlikte 'Kola, Patates Kızartması' de ekleyin? (%64 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kola, Patates Kızartması",
+    "oneri": "Hamburger Menü",
+    "confidence": 0.902,
+    "lift": 7.882,
+    "support": 0.074,
+    "oneri_metni": "'Kola, Patates Kızartması' ile birlikte 'Hamburger Menü' de ekleyin? (%90 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, Şıra",
+    "oneri": "Ayran, İskender Kebap",
+    "confidence": 0.879,
+    "lift": 7.387,
+    "support": 0.054,
+    "oneri_metni": "'Lahmacun, Şıra' ile birlikte 'Ayran, İskender Kebap' de ekleyin? (%87 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, İskender Kebap",
+    "oneri": "Ayran, Şıra",
+    "confidence": 0.657,
+    "lift": 7.256,
+    "support": 0.054,
+    "oneri_metni": "'Lahmacun, İskender Kebap' ile birlikte 'Ayran, Şıra' de ekleyin? (%65 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Şıra",
+    "oneri": "Lahmacun, İskender Kebap",
+    "confidence": 0.602,
+    "lift": 7.256,
+    "support": 0.054,
+    "oneri_metni": "'Ayran, Şıra' ile birlikte 'Lahmacun, İskender Kebap' de ekleyin? (%60 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Patates Kızartması",
+    "oneri": "Ayran, Kola",
+    "confidence": 0.615,
+    "lift": 6.988,
+    "support": 0.053,
+    "oneri_metni": "'Hamburger Menü, Patates Kızartması' ile birlikte 'Ayran, Kola' de ekleyin? (%61 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Kola",
+    "oneri": "Hamburger Menü, Patates Kızartması",
+    "confidence": 0.608,
+    "lift": 6.988,
+    "support": 0.053,
+    "oneri_metni": "'Ayran, Kola' ile birlikte 'Hamburger Menü, Patates Kızartması' de ekleyin? (%60 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Lahmacun, Patates Kızartması",
+    "oneri": "Hamburger Menü",
+    "confidence": 0.792,
+    "lift": 6.92,
+    "support": 0.051,
+    "oneri_metni": "'Ayran, Lahmacun, Patates Kızartması' ile birlikte 'Hamburger Menü' de ekleyin? (%79 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Kola",
+    "oneri": "Ayran, Patates Kızartması",
+    "confidence": 0.56,
+    "lift": 6.832,
+    "support": 0.053,
+    "oneri_metni": "'Hamburger Menü, Kola' ile birlikte 'Ayran, Patates Kızartması' de ekleyin? (%56 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Patates Kızartması",
+    "oneri": "Hamburger Menü, Kola",
+    "confidence": 0.652,
+    "lift": 6.832,
+    "support": 0.053,
+    "oneri_metni": "'Ayran, Patates Kızartması' ile birlikte 'Hamburger Menü, Kola' de ekleyin? (%65 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Hamburger Menü, Kola",
+    "oneri": "Patates Kızartması",
+    "confidence": 0.781,
+    "lift": 6.821,
+    "support": 0.053,
+    "oneri_metni": "'Ayran, Hamburger Menü, Kola' ile birlikte 'Patates Kızartması' de ekleyin? (%78 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Kola, Lahmacun",
+    "oneri": "Hamburger Menü",
+    "confidence": 0.779,
+    "lift": 6.8,
+    "support": 0.054,
+    "oneri_metni": "'Ayran, Kola, Lahmacun' ile birlikte 'Hamburger Menü' de ekleyin? (%77 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü",
+    "oneri": "Ayran, Kola",
+    "confidence": 0.598,
+    "lift": 6.798,
+    "support": 0.069,
+    "oneri_metni": "'Hamburger Menü' ile birlikte 'Ayran, Kola' de ekleyin? (%59 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Kola",
+    "oneri": "Hamburger Menü",
+    "confidence": 0.778,
+    "lift": 6.798,
+    "support": 0.069,
+    "oneri_metni": "'Ayran, Kola' ile birlikte 'Hamburger Menü' de ekleyin? (%77 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Patates Kızartması",
+    "oneri": "Hamburger Menü, Kola",
+    "confidence": 0.646,
+    "lift": 6.767,
+    "support": 0.074,
+    "oneri_metni": "'Patates Kızartması' ile birlikte 'Hamburger Menü, Kola' de ekleyin? (%64 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Kola",
+    "oneri": "Patates Kızartması",
+    "confidence": 0.775,
+    "lift": 6.767,
+    "support": 0.074,
+    "oneri_metni": "'Hamburger Menü, Kola' ile birlikte 'Patates Kızartması' de ekleyin? (%77 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Hamburger Menü, Lahmacun",
+    "oneri": "Patates Kızartması",
+    "confidence": 0.774,
+    "lift": 6.764,
+    "support": 0.051,
+    "oneri_metni": "'Ayran, Hamburger Menü, Lahmacun' ile birlikte 'Patates Kızartması' de ekleyin? (%77 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Patates Kızartması",
+    "oneri": "Hamburger Menü",
+    "confidence": 0.774,
+    "lift": 6.763,
+    "support": 0.064,
+    "oneri_metni": "'Ayran, Patates Kızartması' ile birlikte 'Hamburger Menü' de ekleyin? (%77 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü",
+    "oneri": "Ayran, Patates Kızartması",
+    "confidence": 0.555,
+    "lift": 6.763,
+    "support": 0.064,
+    "oneri_metni": "'Hamburger Menü' ile birlikte 'Ayran, Patates Kızartması' de ekleyin? (%55 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kola, Lahmacun",
+    "oneri": "Hamburger Menü",
+    "confidence": 0.77,
+    "lift": 6.727,
+    "support": 0.057,
+    "oneri_metni": "'Kola, Lahmacun' ile birlikte 'Hamburger Menü' de ekleyin? (%77 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Lahmacun",
+    "oneri": "Patates Kızartması",
+    "confidence": 0.77,
+    "lift": 6.723,
+    "support": 0.053,
+    "oneri_metni": "'Hamburger Menü, Lahmacun' ile birlikte 'Patates Kızartması' de ekleyin? (%76 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, Patates Kızartması",
+    "oneri": "Hamburger Menü",
+    "confidence": 0.77,
+    "lift": 6.723,
+    "support": 0.053,
+    "oneri_metni": "'Lahmacun, Patates Kızartması' ile birlikte 'Hamburger Menü' de ekleyin? (%76 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Hamburger Menü",
+    "oneri": "Patates Kızartması",
+    "confidence": 0.77,
+    "lift": 6.722,
+    "support": 0.064,
+    "oneri_metni": "'Ayran, Hamburger Menü' ile birlikte 'Patates Kızartması' de ekleyin? (%76 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Patates Kızartması",
+    "oneri": "Ayran, Hamburger Menü",
+    "confidence": 0.555,
+    "lift": 6.722,
+    "support": 0.064,
+    "oneri_metni": "'Patates Kızartması' ile birlikte 'Ayran, Hamburger Menü' de ekleyin? (%55 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü",
+    "oneri": "Patates Kızartması",
+    "confidence": 0.76,
+    "lift": 6.636,
+    "support": 0.087,
+    "oneri_metni": "'Hamburger Menü' ile birlikte 'Patates Kızartması' de ekleyin? (%75 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Patates Kızartması",
+    "oneri": "Hamburger Menü",
+    "confidence": 0.76,
+    "lift": 6.636,
+    "support": 0.087,
+    "oneri_metni": "'Patates Kızartması' ile birlikte 'Hamburger Menü' de ekleyin? (%75 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kola",
+    "oneri": "Hamburger Menü, Patates Kızartması",
+    "confidence": 0.576,
+    "lift": 6.619,
+    "support": 0.074,
+    "oneri_metni": "'Kola' ile birlikte 'Hamburger Menü, Patates Kızartması' de ekleyin? (%57 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Patates Kızartması",
+    "oneri": "Kola",
+    "confidence": 0.851,
+    "lift": 6.619,
+    "support": 0.074,
+    "oneri_metni": "'Hamburger Menü, Patates Kızartması' ile birlikte 'Kola' de ekleyin? (%85 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Hamburger Menü, Patates Kızartması",
+    "oneri": "Kola",
+    "confidence": 0.843,
+    "lift": 6.557,
+    "support": 0.053,
+    "oneri_metni": "'Ayran, Hamburger Menü, Patates Kızartması' ile birlikte 'Kola' de ekleyin? (%84 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kola",
+    "oneri": "Hamburger Menü",
+    "confidence": 0.743,
+    "lift": 6.491,
+    "support": 0.096,
+    "oneri_metni": "'Kola' ile birlikte 'Hamburger Menü' de ekleyin? (%74 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü",
+    "oneri": "Kola",
+    "confidence": 0.834,
+    "lift": 6.491,
+    "support": 0.096,
+    "oneri_metni": "'Hamburger Menü' ile birlikte 'Kola' de ekleyin? (%83 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Hamburger Menü",
+    "oneri": "Kola",
+    "confidence": 0.83,
+    "lift": 6.462,
+    "support": 0.069,
+    "oneri_metni": "'Ayran, Hamburger Menü' ile birlikte 'Kola' de ekleyin? (%83 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Lahmacun",
+    "oneri": "Kola",
+    "confidence": 0.82,
+    "lift": 6.382,
+    "support": 0.057,
+    "oneri_metni": "'Hamburger Menü, Lahmacun' ile birlikte 'Kola' de ekleyin? (%82 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Hamburger Menü, Lahmacun",
+    "oneri": "Kola",
+    "confidence": 0.82,
+    "lift": 6.378,
+    "support": 0.054,
+    "oneri_metni": "'Ayran, Hamburger Menü, Lahmacun' ile birlikte 'Kola' de ekleyin? (%81 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Çay (Bardak), Şıra",
+    "oneri": "İskender Kebap",
+    "confidence": 0.966,
+    "lift": 5.713,
+    "support": 0.056,
+    "oneri_metni": "'Ayran, Çay (Bardak), Şıra' ile birlikte 'İskender Kebap' de ekleyin? (%96 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Lahmacun, Şıra",
+    "oneri": "İskender Kebap",
+    "confidence": 0.956,
+    "lift": 5.658,
+    "support": 0.054,
+    "oneri_metni": "'Ayran, Lahmacun, Şıra' ile birlikte 'İskender Kebap' de ekleyin? (%95 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Kola",
+    "oneri": "Patates Kızartması",
+    "confidence": 0.648,
+    "lift": 5.657,
+    "support": 0.057,
+    "oneri_metni": "'Ayran, Kola' ile birlikte 'Patates Kızartması' de ekleyin? (%64 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Şıra",
+    "oneri": "Ayran, İskender Kebap",
+    "confidence": 0.671,
+    "lift": 5.635,
+    "support": 0.086,
+    "oneri_metni": "'Şıra' ile birlikte 'Ayran, İskender Kebap' de ekleyin? (%67 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, İskender Kebap",
+    "oneri": "Şıra",
+    "confidence": 0.718,
+    "lift": 5.635,
+    "support": 0.086,
+    "oneri_metni": "'Ayran, İskender Kebap' ile birlikte 'Şıra' de ekleyin? (%71 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, Şıra",
+    "oneri": "İskender Kebap",
+    "confidence": 0.952,
+    "lift": 5.631,
+    "support": 0.059,
+    "oneri_metni": "'Lahmacun, Şıra' ile birlikte 'İskender Kebap' de ekleyin? (%95 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Şıra",
+    "oneri": "İskender Kebap",
+    "confidence": 0.945,
+    "lift": 5.59,
+    "support": 0.086,
+    "oneri_metni": "'Ayran, Şıra' ile birlikte 'İskender Kebap' de ekleyin? (%94 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, İskender Kebap",
+    "oneri": "Şıra",
+    "confidence": 0.711,
+    "lift": 5.575,
+    "support": 0.059,
+    "oneri_metni": "'Lahmacun, İskender Kebap' ile birlikte 'Şıra' de ekleyin? (%71 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kola",
+    "oneri": "Patates Kızartması",
+    "confidence": 0.638,
+    "lift": 5.573,
+    "support": 0.082,
+    "oneri_metni": "'Kola' ile birlikte 'Patates Kızartması' de ekleyin? (%63 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Patates Kızartması",
+    "oneri": "Kola",
+    "confidence": 0.716,
+    "lift": 5.573,
+    "support": 0.082,
+    "oneri_metni": "'Patates Kızartması' ile birlikte 'Kola' de ekleyin? (%71 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Lahmacun, İskender Kebap",
+    "oneri": "Şıra",
+    "confidence": 0.708,
+    "lift": 5.551,
+    "support": 0.054,
+    "oneri_metni": "'Ayran, Lahmacun, İskender Kebap' ile birlikte 'Şıra' de ekleyin? (%70 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Çay (Bardak), İskender Kebap",
+    "oneri": "Şıra",
+    "confidence": 0.704,
+    "lift": 5.525,
+    "support": 0.056,
+    "oneri_metni": "'Ayran, Çay (Bardak), İskender Kebap' ile birlikte 'Şıra' de ekleyin? (%70 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çay (Bardak), Şıra",
+    "oneri": "İskender Kebap",
+    "confidence": 0.93,
+    "lift": 5.504,
+    "support": 0.08,
+    "oneri_metni": "'Çay (Bardak), Şıra' ile birlikte 'İskender Kebap' de ekleyin? (%93 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "İskender Kebap",
+    "oneri": "Şıra",
+    "confidence": 0.701,
+    "lift": 5.499,
+    "support": 0.118,
+    "oneri_metni": "'İskender Kebap' ile birlikte 'Şıra' de ekleyin? (%70 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Şıra",
+    "oneri": "İskender Kebap",
+    "confidence": 0.929,
+    "lift": 5.499,
+    "support": 0.118,
+    "oneri_metni": "'Şıra' ile birlikte 'İskender Kebap' de ekleyin? (%92 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Gavurdağı Salata",
+    "oneri": "Adana Kebap",
+    "confidence": 0.758,
+    "lift": 5.496,
+    "support": 0.057,
+    "oneri_metni": "'Ayran, Gavurdağı Salata' ile birlikte 'Adana Kebap' de ekleyin? (%75 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çay (Bardak), Şıra",
+    "oneri": "Ayran, İskender Kebap",
+    "confidence": 0.651,
+    "lift": 5.472,
+    "support": 0.056,
+    "oneri_metni": "'Çay (Bardak), Şıra' ile birlikte 'Ayran, İskender Kebap' de ekleyin? (%65 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çay (Bardak), İskender Kebap",
+    "oneri": "Şıra",
+    "confidence": 0.696,
+    "lift": 5.456,
+    "support": 0.08,
+    "oneri_metni": "'Çay (Bardak), İskender Kebap' ile birlikte 'Şıra' de ekleyin? (%69 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Şıra",
+    "oneri": "Çay (Bardak), İskender Kebap",
+    "confidence": 0.627,
+    "lift": 5.456,
+    "support": 0.08,
+    "oneri_metni": "'Şıra' ile birlikte 'Çay (Bardak), İskender Kebap' de ekleyin? (%62 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Patates Kızartması",
+    "oneri": "Kola",
+    "confidence": 0.695,
+    "lift": 5.41,
+    "support": 0.057,
+    "oneri_metni": "'Ayran, Patates Kızartması' ile birlikte 'Kola' de ekleyin? (%69 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Şıra",
+    "oneri": "Çay (Bardak), İskender Kebap",
+    "confidence": 0.619,
+    "lift": 5.381,
+    "support": 0.056,
+    "oneri_metni": "'Ayran, Şıra' ile birlikte 'Çay (Bardak), İskender Kebap' de ekleyin? (%61 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Gavurdağı Salata",
+    "oneri": "Adana Kebap, Ayran",
+    "confidence": 0.598,
+    "lift": 5.003,
+    "support": 0.057,
+    "oneri_metni": "'Gavurdağı Salata' ile birlikte 'Adana Kebap, Ayran' de ekleyin? (%59 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Ezme, Şalgam",
+    "oneri": "Adana Kebap",
+    "confidence": 0.684,
+    "lift": 4.958,
+    "support": 0.052,
+    "oneri_metni": "'Ayran, Ezme, Şalgam' ile birlikte 'Adana Kebap' de ekleyin? (%68 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Gavurdağı Salata",
+    "oneri": "Adana Kebap",
+    "confidence": 0.672,
+    "lift": 4.869,
+    "support": 0.064,
+    "oneri_metni": "'Gavurdağı Salata' ile birlikte 'Adana Kebap' de ekleyin? (%67 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ezme, Şalgam",
+    "oneri": "Adana Kebap, Ayran",
+    "confidence": 0.575,
+    "lift": 4.808,
+    "support": 0.052,
+    "oneri_metni": "'Ezme, Şalgam' ile birlikte 'Adana Kebap, Ayran' de ekleyin? (%57 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ezme, Şalgam",
+    "oneri": "Adana Kebap",
+    "confidence": 0.652,
+    "lift": 4.724,
+    "support": 0.059,
+    "oneri_metni": "'Ezme, Şalgam' ile birlikte 'Adana Kebap' de ekleyin? (%65 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Tiramisu",
+    "oneri": "Türk Kahvesi",
+    "confidence": 0.935,
+    "lift": 4.65,
+    "support": 0.05,
+    "oneri_metni": "'Tiramisu' ile birlikte 'Türk Kahvesi' de ekleyin? (%93 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Sucuklu Yumurta",
+    "oneri": "Simit, Çay (Bardak)",
+    "confidence": 0.632,
+    "lift": 4.629,
+    "support": 0.058,
+    "oneri_metni": "'Sucuklu Yumurta' ile birlikte 'Simit, Çay (Bardak)' de ekleyin? (%63 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Şalgam",
+    "oneri": "Ayran, Ezme",
+    "confidence": 0.556,
+    "lift": 4.577,
+    "support": 0.052,
+    "oneri_metni": "'Adana Kebap, Şalgam' ile birlikte 'Ayran, Ezme' de ekleyin? (%55 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Ezme",
+    "oneri": "Adana Kebap",
+    "confidence": 0.613,
+    "lift": 4.443,
+    "support": 0.074,
+    "oneri_metni": "'Ayran, Ezme' ile birlikte 'Adana Kebap' de ekleyin? (%61 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kiremitte Menemen",
+    "oneri": "Simit, Çay (Bardak)",
+    "confidence": 0.597,
+    "lift": 4.374,
+    "support": 0.06,
+    "oneri_metni": "'Kiremitte Menemen' ile birlikte 'Simit, Çay (Bardak)' de ekleyin? (%59 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Serpme Kahvaltı (2 kişi)",
+    "oneri": "Simit, Çay (Bardak)",
+    "confidence": 0.597,
+    "lift": 4.373,
+    "support": 0.059,
+    "oneri_metni": "'Serpme Kahvaltı (2 kişi)' ile birlikte 'Simit, Çay (Bardak)' de ekleyin? (%59 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Sucuklu Yumurta",
+    "oneri": "Simit",
+    "confidence": 0.648,
+    "lift": 4.28,
+    "support": 0.059,
+    "oneri_metni": "'Sucuklu Yumurta' ile birlikte 'Simit' de ekleyin? (%64 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Sucuklu Yumurta, Çay (Bardak)",
+    "oneri": "Simit",
+    "confidence": 0.646,
+    "lift": 4.264,
+    "support": 0.058,
+    "oneri_metni": "'Sucuklu Yumurta, Çay (Bardak)' ile birlikte 'Simit' de ekleyin? (%64 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Fırın Sütlaç, Çay (Bardak)",
+    "oneri": "Türk Kahvesi",
+    "confidence": 0.831,
+    "lift": 4.133,
+    "support": 0.051,
+    "oneri_metni": "'Fırın Sütlaç, Çay (Bardak)' ile birlikte 'Türk Kahvesi' de ekleyin? (%83 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Ayran, Şalgam",
+    "oneri": "Ezme",
+    "confidence": 0.634,
+    "lift": 4.052,
+    "support": 0.052,
+    "oneri_metni": "'Adana Kebap, Ayran, Şalgam' ile birlikte 'Ezme' de ekleyin? (%63 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Serpme Kahvaltı (2 kişi)",
+    "oneri": "Simit",
+    "confidence": 0.612,
+    "lift": 4.041,
+    "support": 0.06,
+    "oneri_metni": "'Serpme Kahvaltı (2 kişi)' ile birlikte 'Simit' de ekleyin? (%61 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kiremitte Menemen, Çay (Bardak)",
+    "oneri": "Simit",
+    "confidence": 0.612,
+    "lift": 4.041,
+    "support": 0.06,
+    "oneri_metni": "'Kiremitte Menemen, Çay (Bardak)' ile birlikte 'Simit' de ekleyin? (%61 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kiremitte Menemen",
+    "oneri": "Simit",
+    "confidence": 0.612,
+    "lift": 4.039,
+    "support": 0.061,
+    "oneri_metni": "'Kiremitte Menemen' ile birlikte 'Simit' de ekleyin? (%61 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Şalgam",
+    "oneri": "Ezme",
+    "confidence": 0.631,
+    "lift": 4.032,
+    "support": 0.059,
+    "oneri_metni": "'Adana Kebap, Şalgam' ile birlikte 'Ezme' de ekleyin? (%63 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Urfa Kebap",
+    "oneri": "Ezme",
+    "confidence": 0.627,
+    "lift": 4.007,
+    "support": 0.074,
+    "oneri_metni": "'Urfa Kebap' ile birlikte 'Ezme' de ekleyin? (%62 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Serpme Kahvaltı (2 kişi), Çay (Bardak)",
+    "oneri": "Simit",
+    "confidence": 0.606,
+    "lift": 4.001,
+    "support": 0.059,
+    "oneri_metni": "'Serpme Kahvaltı (2 kişi), Çay (Bardak)' ile birlikte 'Simit' de ekleyin? (%60 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Ayran",
+    "oneri": "Ezme",
+    "confidence": 0.623,
+    "lift": 3.984,
+    "support": 0.074,
+    "oneri_metni": "'Adana Kebap, Ayran' ile birlikte 'Ezme' de ekleyin? (%62 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap",
+    "oneri": "Ezme",
+    "confidence": 0.62,
+    "lift": 3.959,
+    "support": 0.086,
+    "oneri_metni": "'Adana Kebap' ile birlikte 'Ezme' de ekleyin? (%61 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Ezme",
+    "oneri": "Ayran, Şalgam",
+    "confidence": 0.608,
+    "lift": 3.949,
+    "support": 0.052,
+    "oneri_metni": "'Adana Kebap, Ezme' ile birlikte 'Ayran, Şalgam' de ekleyin? (%60 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Fırın Sütlaç",
+    "oneri": "Türk Kahvesi",
+    "confidence": 0.789,
+    "lift": 3.928,
+    "support": 0.075,
+    "oneri_metni": "'Fırın Sütlaç' ile birlikte 'Türk Kahvesi' de ekleyin? (%78 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Urfa Kebap",
+    "oneri": "Ezme",
+    "confidence": 0.61,
+    "lift": 3.896,
+    "support": 0.062,
+    "oneri_metni": "'Ayran, Urfa Kebap' ile birlikte 'Ezme' de ekleyin? (%60 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap",
+    "oneri": "Ayran, Şalgam",
+    "confidence": 0.594,
+    "lift": 3.858,
+    "support": 0.082,
+    "oneri_metni": "'Adana Kebap' ile birlikte 'Ayran, Şalgam' de ekleyin? (%59 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Urfa Kebap",
+    "oneri": "Ayran, Şalgam",
+    "confidence": 0.572,
+    "lift": 3.715,
+    "support": 0.068,
+    "oneri_metni": "'Urfa Kebap' ile birlikte 'Ayran, Şalgam' de ekleyin? (%57 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Karışık Izgara",
+    "oneri": "Şalgam",
+    "confidence": 0.72,
+    "lift": 3.398,
+    "support": 0.051,
+    "oneri_metni": "'Ayran, Karışık Izgara' ile birlikte 'Şalgam' de ekleyin? (%72 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Karışık Izgara",
+    "oneri": "Şalgam",
+    "confidence": 0.701,
+    "lift": 3.309,
+    "support": 0.074,
+    "oneri_metni": "'Karışık Izgara' ile birlikte 'Şalgam' de ekleyin? (%70 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Ayran, Ezme",
+    "oneri": "Şalgam",
+    "confidence": 0.698,
+    "lift": 3.292,
+    "support": 0.052,
+    "oneri_metni": "'Adana Kebap, Ayran, Ezme' ile birlikte 'Şalgam' de ekleyin? (%69 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Ezme",
+    "oneri": "Şalgam",
+    "confidence": 0.69,
+    "lift": 3.255,
+    "support": 0.059,
+    "oneri_metni": "'Adana Kebap, Ezme' ile birlikte 'Şalgam' de ekleyin? (%69 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Ayran",
+    "oneri": "Şalgam",
+    "confidence": 0.686,
+    "lift": 3.237,
+    "support": 0.082,
+    "oneri_metni": "'Adana Kebap, Ayran' ile birlikte 'Şalgam' de ekleyin? (%68 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap",
+    "oneri": "Şalgam",
+    "confidence": 0.678,
+    "lift": 3.196,
+    "support": 0.093,
+    "oneri_metni": "'Adana Kebap' ile birlikte 'Şalgam' de ekleyin? (%67 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Urfa Kebap",
+    "oneri": "Şalgam",
+    "confidence": 0.659,
+    "lift": 3.106,
+    "support": 0.068,
+    "oneri_metni": "'Ayran, Urfa Kebap' ile birlikte 'Şalgam' de ekleyin? (%65 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Urfa Kebap",
+    "oneri": "Şalgam",
+    "confidence": 0.657,
+    "lift": 3.098,
+    "support": 0.077,
+    "oneri_metni": "'Urfa Kebap' ile birlikte 'Şalgam' de ekleyin? (%65 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Ezme",
+    "oneri": "Şalgam",
+    "confidence": 0.626,
+    "lift": 2.951,
+    "support": 0.076,
+    "oneri_metni": "'Ayran, Ezme' ile birlikte 'Şalgam' de ekleyin? (%62 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çoban Salata",
+    "oneri": "Ayran, Lahmacun",
+    "confidence": 0.912,
+    "lift": 2.823,
+    "support": 0.13,
+    "oneri_metni": "'Çoban Salata' ile birlikte 'Ayran, Lahmacun' de ekleyin? (%91 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çay (Bardak), Çoban Salata",
+    "oneri": "Ayran, Lahmacun",
+    "confidence": 0.905,
+    "lift": 2.802,
+    "support": 0.052,
+    "oneri_metni": "'Çay (Bardak), Çoban Salata' ile birlikte 'Ayran, Lahmacun' de ekleyin? (%90 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ezme",
+    "oneri": "Şalgam",
+    "confidence": 0.578,
+    "lift": 2.728,
+    "support": 0.09,
+    "oneri_metni": "'Ezme' ile birlikte 'Şalgam' de ekleyin? (%57 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Çoban Salata",
+    "oneri": "Lahmacun",
+    "confidence": 1.0,
+    "lift": 2.725,
+    "support": 0.13,
+    "oneri_metni": "'Ayran, Çoban Salata' ile birlikte 'Lahmacun' de ekleyin? (%100 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çay (Bardak), Çoban Salata",
+    "oneri": "Lahmacun",
+    "confidence": 1.0,
+    "lift": 2.725,
+    "support": 0.058,
+    "oneri_metni": "'Çay (Bardak), Çoban Salata' ile birlikte 'Lahmacun' de ekleyin? (%100 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Çay (Bardak), Çoban Salata",
+    "oneri": "Lahmacun",
+    "confidence": 1.0,
+    "lift": 2.725,
+    "support": 0.052,
+    "oneri_metni": "'Ayran, Çay (Bardak), Çoban Salata' ile birlikte 'Lahmacun' de ekleyin? (%100 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çoban Salata",
+    "oneri": "Lahmacun",
+    "confidence": 1.0,
+    "lift": 2.725,
+    "support": 0.142,
+    "oneri_metni": "'Çoban Salata' ile birlikte 'Lahmacun' de ekleyin? (%100 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, İskender Kebap",
+    "oneri": "Ayran, Çay (Bardak)",
+    "confidence": 0.62,
+    "lift": 2.652,
+    "support": 0.051,
+    "oneri_metni": "'Lahmacun, İskender Kebap' ile birlikte 'Ayran, Çay (Bardak)' de ekleyin? (%62 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Hamburger Menü, Patates Kızartması",
+    "oneri": "Lahmacun",
+    "confidence": 0.811,
+    "lift": 2.21,
+    "support": 0.051,
+    "oneri_metni": "'Ayran, Hamburger Menü, Patates Kızartması' ile birlikte 'Lahmacun' de ekleyin? (%81 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Çiğ Köfte Dürüm",
+    "oneri": "Lahmacun",
+    "confidence": 0.811,
+    "lift": 2.209,
+    "support": 0.075,
+    "oneri_metni": "'Ayran, Çiğ Köfte Dürüm' ile birlikte 'Lahmacun' de ekleyin? (%81 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Hamburger Menü",
+    "oneri": "Lahmacun",
+    "confidence": 0.806,
+    "lift": 2.196,
+    "support": 0.067,
+    "oneri_metni": "'Ayran, Hamburger Menü' ile birlikte 'Lahmacun' de ekleyin? (%80 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Hamburger Menü, Kola",
+    "oneri": "Lahmacun",
+    "confidence": 0.796,
+    "lift": 2.168,
+    "support": 0.054,
+    "oneri_metni": "'Ayran, Hamburger Menü, Kola' ile birlikte 'Lahmacun' de ekleyin? (%79 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Kola",
+    "oneri": "Lahmacun",
+    "confidence": 0.795,
+    "lift": 2.167,
+    "support": 0.07,
+    "oneri_metni": "'Ayran, Kola' ile birlikte 'Lahmacun' de ekleyin? (%79 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Patates Kızartması",
+    "oneri": "Lahmacun",
+    "confidence": 0.793,
+    "lift": 2.16,
+    "support": 0.065,
+    "oneri_metni": "'Ayran, Patates Kızartması' ile birlikte 'Lahmacun' de ekleyin? (%79 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çiğ Köfte Dürüm",
+    "oneri": "Ayran, Lahmacun",
+    "confidence": 0.62,
+    "lift": 1.919,
+    "support": 0.075,
+    "oneri_metni": "'Çiğ Köfte Dürüm' ile birlikte 'Ayran, Lahmacun' de ekleyin? (%61 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Patates Kızartması",
+    "oneri": "Ayran, Lahmacun",
+    "confidence": 0.592,
+    "lift": 1.833,
+    "support": 0.051,
+    "oneri_metni": "'Hamburger Menü, Patates Kızartması' ile birlikte 'Ayran, Lahmacun' de ekleyin? (%59 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Serpme Kahvaltı (2 kişi)",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.985,
+    "lift": 1.799,
+    "support": 0.097,
+    "oneri_metni": "'Serpme Kahvaltı (2 kişi)' ile birlikte 'Çay (Bardak)' de ekleyin? (%98 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü",
+    "oneri": "Ayran, Lahmacun",
+    "confidence": 0.581,
+    "lift": 1.798,
+    "support": 0.067,
+    "oneri_metni": "'Hamburger Menü' ile birlikte 'Ayran, Lahmacun' de ekleyin? (%58 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Sucuklu Yumurta",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.978,
+    "lift": 1.786,
+    "support": 0.089,
+    "oneri_metni": "'Sucuklu Yumurta' ile birlikte 'Çay (Bardak)' de ekleyin? (%97 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kiremitte Menemen, Simit",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.976,
+    "lift": 1.782,
+    "support": 0.06,
+    "oneri_metni": "'Kiremitte Menemen, Simit' ile birlikte 'Çay (Bardak)' de ekleyin? (%97 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kiremitte Menemen",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.975,
+    "lift": 1.781,
+    "support": 0.098,
+    "oneri_metni": "'Kiremitte Menemen' ile birlikte 'Çay (Bardak)' de ekleyin? (%97 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Serpme Kahvaltı (2 kişi), Simit",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.975,
+    "lift": 1.781,
+    "support": 0.059,
+    "oneri_metni": "'Serpme Kahvaltı (2 kişi), Simit' ile birlikte 'Çay (Bardak)' de ekleyin? (%97 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Simit, Sucuklu Yumurta",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.975,
+    "lift": 1.78,
+    "support": 0.058,
+    "oneri_metni": "'Simit, Sucuklu Yumurta' ile birlikte 'Çay (Bardak)' de ekleyin? (%97 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çiğ Köfte Dürüm",
+    "oneri": "Lahmacun",
+    "confidence": 0.653,
+    "lift": 1.779,
+    "support": 0.079,
+    "oneri_metni": "'Çiğ Köfte Dürüm' ile birlikte 'Lahmacun' de ekleyin? (%65 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Lahmacun, Patates Kızartması",
+    "oneri": "Ayran",
+    "confidence": 0.963,
+    "lift": 1.778,
+    "support": 0.051,
+    "oneri_metni": "'Hamburger Menü, Lahmacun, Patates Kızartması' ile birlikte 'Ayran' de ekleyin? (%96 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Lahmacun",
+    "oneri": "Ayran",
+    "confidence": 0.957,
+    "lift": 1.767,
+    "support": 0.067,
+    "oneri_metni": "'Hamburger Menü, Lahmacun' ile birlikte 'Ayran' de ekleyin? (%95 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Kola",
+    "oneri": "Ayran, Lahmacun",
+    "confidence": 0.571,
+    "lift": 1.767,
+    "support": 0.054,
+    "oneri_metni": "'Hamburger Menü, Kola' ile birlikte 'Ayran, Lahmacun' de ekleyin? (%57 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Kola, Lahmacun",
+    "oneri": "Ayran",
+    "confidence": 0.956,
+    "lift": 1.766,
+    "support": 0.054,
+    "oneri_metni": "'Hamburger Menü, Kola, Lahmacun' ile birlikte 'Ayran' de ekleyin? (%95 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Çay (Bardak), İskender Kebap",
+    "oneri": "Lahmacun",
+    "confidence": 0.648,
+    "lift": 1.765,
+    "support": 0.051,
+    "oneri_metni": "'Ayran, Çay (Bardak), İskender Kebap' ile birlikte 'Lahmacun' de ekleyin? (%64 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, İskender Kebap",
+    "oneri": "Lahmacun",
+    "confidence": 0.647,
+    "lift": 1.763,
+    "support": 0.077,
+    "oneri_metni": "'Ayran, İskender Kebap' ile birlikte 'Lahmacun' de ekleyin? (%64 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Patates Kızartması",
+    "oneri": "Ayran, Lahmacun",
+    "confidence": 0.568,
+    "lift": 1.758,
+    "support": 0.065,
+    "oneri_metni": "'Patates Kızartması' ile birlikte 'Ayran, Lahmacun' de ekleyin? (%56 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Havuç Dilimi Baklava, Türk Kahvesi",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.962,
+    "lift": 1.757,
+    "support": 0.051,
+    "oneri_metni": "'Havuç Dilimi Baklava, Türk Kahvesi' ile birlikte 'Çay (Bardak)' de ekleyin? (%96 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kaşarlı Pide, Lahmacun",
+    "oneri": "Ayran",
+    "confidence": 0.951,
+    "lift": 1.756,
+    "support": 0.077,
+    "oneri_metni": "'Kaşarlı Pide, Lahmacun' ile birlikte 'Ayran' de ekleyin? (%95 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, Çiğ Köfte Dürüm",
+    "oneri": "Ayran",
+    "confidence": 0.949,
+    "lift": 1.753,
+    "support": 0.075,
+    "oneri_metni": "'Lahmacun, Çiğ Köfte Dürüm' ile birlikte 'Ayran' de ekleyin? (%94 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, Tavuk Şiş",
+    "oneri": "Ayran",
+    "confidence": 0.948,
+    "lift": 1.751,
+    "support": 0.082,
+    "oneri_metni": "'Lahmacun, Tavuk Şiş' ile birlikte 'Ayran' de ekleyin? (%94 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kola, Lahmacun",
+    "oneri": "Ayran",
+    "confidence": 0.946,
+    "lift": 1.747,
+    "support": 0.07,
+    "oneri_metni": "'Kola, Lahmacun' ile birlikte 'Ayran' de ekleyin? (%94 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Lahmacun",
+    "oneri": "Ayran",
+    "confidence": 0.946,
+    "lift": 1.747,
+    "support": 0.052,
+    "oneri_metni": "'Adana Kebap, Lahmacun' ile birlikte 'Ayran' de ekleyin? (%94 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, İskender Kebap, Şıra",
+    "oneri": "Lahmacun",
+    "confidence": 0.637,
+    "lift": 1.737,
+    "support": 0.054,
+    "oneri_metni": "'Ayran, İskender Kebap, Şıra' ile birlikte 'Lahmacun' de ekleyin? (%63 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kıymalı Pide, Lahmacun",
+    "oneri": "Ayran",
+    "confidence": 0.938,
+    "lift": 1.733,
+    "support": 0.091,
+    "oneri_metni": "'Kıymalı Pide, Lahmacun' ile birlikte 'Ayran' de ekleyin? (%93 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, Patates Kızartması",
+    "oneri": "Ayran",
+    "confidence": 0.935,
+    "lift": 1.727,
+    "support": 0.065,
+    "oneri_metni": "'Lahmacun, Patates Kızartması' ile birlikte 'Ayran' de ekleyin? (%93 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Şıra",
+    "oneri": "Lahmacun",
+    "confidence": 0.63,
+    "lift": 1.716,
+    "support": 0.057,
+    "oneri_metni": "'Ayran, Şıra' ile birlikte 'Lahmacun' de ekleyin? (%62 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, İskender Kebap",
+    "oneri": "Ayran",
+    "confidence": 0.928,
+    "lift": 1.713,
+    "support": 0.077,
+    "oneri_metni": "'Lahmacun, İskender Kebap' ile birlikte 'Ayran' de ekleyin? (%92 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Tavuk Şiş",
+    "oneri": "Lahmacun",
+    "confidence": 0.628,
+    "lift": 1.712,
+    "support": 0.082,
+    "oneri_metni": "'Ayran, Tavuk Şiş' ile birlikte 'Lahmacun' de ekleyin? (%62 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ezme, Lahmacun",
+    "oneri": "Ayran",
+    "confidence": 0.926,
+    "lift": 1.709,
+    "support": 0.056,
+    "oneri_metni": "'Ezme, Lahmacun' ile birlikte 'Ayran' de ekleyin? (%92 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, İskender Kebap, Şıra",
+    "oneri": "Ayran",
+    "confidence": 0.924,
+    "lift": 1.706,
+    "support": 0.054,
+    "oneri_metni": "'Lahmacun, İskender Kebap, Şıra' ile birlikte 'Ayran' de ekleyin? (%92 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, Şalgam",
+    "oneri": "Ayran",
+    "confidence": 0.923,
+    "lift": 1.705,
+    "support": 0.072,
+    "oneri_metni": "'Lahmacun, Şalgam' ile birlikte 'Ayran' de ekleyin? (%92 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, Şıra",
+    "oneri": "Ayran",
+    "confidence": 0.919,
+    "lift": 1.698,
+    "support": 0.057,
+    "oneri_metni": "'Lahmacun, Şıra' ile birlikte 'Ayran' de ekleyin? (%91 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, Çoban Salata",
+    "oneri": "Ayran",
+    "confidence": 0.912,
+    "lift": 1.684,
+    "support": 0.13,
+    "oneri_metni": "'Lahmacun, Çoban Salata' ile birlikte 'Ayran' de ekleyin? (%91 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çoban Salata",
+    "oneri": "Ayran",
+    "confidence": 0.912,
+    "lift": 1.684,
+    "support": 0.13,
+    "oneri_metni": "'Çoban Salata' ile birlikte 'Ayran' de ekleyin? (%91 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Patates Kızartması",
+    "oneri": "Lahmacun",
+    "confidence": 0.615,
+    "lift": 1.676,
+    "support": 0.053,
+    "oneri_metni": "'Hamburger Menü, Patates Kızartması' ile birlikte 'Lahmacun' de ekleyin? (%61 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çay (Bardak), Çoban Salata",
+    "oneri": "Ayran",
+    "confidence": 0.905,
+    "lift": 1.672,
+    "support": 0.052,
+    "oneri_metni": "'Çay (Bardak), Çoban Salata' ile birlikte 'Ayran' de ekleyin? (%90 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, Çay (Bardak), Çoban Salata",
+    "oneri": "Ayran",
+    "confidence": 0.905,
+    "lift": 1.672,
+    "support": 0.052,
+    "oneri_metni": "'Lahmacun, Çay (Bardak), Çoban Salata' ile birlikte 'Ayran' de ekleyin? (%90 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Künefe, Türk Kahvesi",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.914,
+    "lift": 1.669,
+    "support": 0.053,
+    "oneri_metni": "'Künefe, Türk Kahvesi' ile birlikte 'Çay (Bardak)' de ekleyin? (%91 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, Çay (Bardak), İskender Kebap",
+    "oneri": "Ayran",
+    "confidence": 0.896,
+    "lift": 1.654,
+    "support": 0.051,
+    "oneri_metni": "'Lahmacun, Çay (Bardak), İskender Kebap' ile birlikte 'Ayran' de ekleyin? (%89 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü",
+    "oneri": "Lahmacun",
+    "confidence": 0.607,
+    "lift": 1.654,
+    "support": 0.07,
+    "oneri_metni": "'Hamburger Menü' ile birlikte 'Lahmacun' de ekleyin? (%60 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Patates Kızartması",
+    "oneri": "Lahmacun",
+    "confidence": 0.607,
+    "lift": 1.654,
+    "support": 0.07,
+    "oneri_metni": "'Patates Kızartması' ile birlikte 'Lahmacun' de ekleyin? (%60 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Künefe",
+    "oneri": "Ayran",
+    "confidence": 0.893,
+    "lift": 1.649,
+    "support": 0.05,
+    "oneri_metni": "'Adana Kebap, Künefe' ile birlikte 'Ayran' de ekleyin? (%89 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Simit",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.901,
+    "lift": 1.646,
+    "support": 0.137,
+    "oneri_metni": "'Simit' ile birlikte 'Çay (Bardak)' de ekleyin? (%90 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Kaşarlı Pide",
+    "oneri": "Lahmacun",
+    "confidence": 0.603,
+    "lift": 1.643,
+    "support": 0.077,
+    "oneri_metni": "'Ayran, Kaşarlı Pide' ile birlikte 'Lahmacun' de ekleyin? (%60 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Gavurdağı Salata",
+    "oneri": "Ayran",
+    "confidence": 0.89,
+    "lift": 1.643,
+    "support": 0.057,
+    "oneri_metni": "'Adana Kebap, Gavurdağı Salata' ile birlikte 'Ayran' de ekleyin? (%88 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kıymalı Pide, Şalgam",
+    "oneri": "Ayran",
+    "confidence": 0.885,
+    "lift": 1.635,
+    "support": 0.054,
+    "oneri_metni": "'Kıymalı Pide, Şalgam' ile birlikte 'Ayran' de ekleyin? (%88 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Ezme, Şalgam",
+    "oneri": "Ayran",
+    "confidence": 0.881,
+    "lift": 1.628,
+    "support": 0.052,
+    "oneri_metni": "'Adana Kebap, Ezme, Şalgam' ile birlikte 'Ayran' de ekleyin? (%88 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Künefe, Lahmacun",
+    "oneri": "Ayran",
+    "confidence": 0.881,
+    "lift": 1.628,
+    "support": 0.052,
+    "oneri_metni": "'Künefe, Lahmacun' ile birlikte 'Ayran' de ekleyin? (%88 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Kola",
+    "oneri": "Lahmacun",
+    "confidence": 0.597,
+    "lift": 1.626,
+    "support": 0.057,
+    "oneri_metni": "'Hamburger Menü, Kola' ile birlikte 'Lahmacun' de ekleyin? (%59 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran",
+    "oneri": "Lahmacun",
+    "confidence": 0.596,
+    "lift": 1.625,
+    "support": 0.323,
+    "oneri_metni": "'Ayran' ile birlikte 'Lahmacun' de ekleyin? (%59 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun",
+    "oneri": "Ayran",
+    "confidence": 0.88,
+    "lift": 1.625,
+    "support": 0.323,
+    "oneri_metni": "'Lahmacun' ile birlikte 'Ayran' de ekleyin? (%88 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Şalgam",
+    "oneri": "Ayran",
+    "confidence": 0.877,
+    "lift": 1.62,
+    "support": 0.082,
+    "oneri_metni": "'Adana Kebap, Şalgam' ile birlikte 'Ayran' de ekleyin? (%87 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Ezme",
+    "oneri": "Ayran",
+    "confidence": 0.871,
+    "lift": 1.609,
+    "support": 0.074,
+    "oneri_metni": "'Adana Kebap, Ezme' ile birlikte 'Ayran' de ekleyin? (%87 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kaşarlı Pide",
+    "oneri": "Ayran",
+    "confidence": 0.871,
+    "lift": 1.609,
+    "support": 0.129,
+    "oneri_metni": "'Kaşarlı Pide' ile birlikte 'Ayran' de ekleyin? (%87 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Urfa Kebap, Şalgam",
+    "oneri": "Ayran",
+    "confidence": 0.871,
+    "lift": 1.608,
+    "support": 0.068,
+    "oneri_metni": "'Urfa Kebap, Şalgam' ile birlikte 'Ayran' de ekleyin? (%87 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kıymalı Pide, İskender Kebap",
+    "oneri": "Ayran",
+    "confidence": 0.87,
+    "lift": 1.606,
+    "support": 0.05,
+    "oneri_metni": "'Kıymalı Pide, İskender Kebap' ile birlikte 'Ayran' de ekleyin? (%86 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Urfa Kebap",
+    "oneri": "Ayran",
+    "confidence": 0.869,
+    "lift": 1.604,
+    "support": 0.102,
+    "oneri_metni": "'Urfa Kebap' ile birlikte 'Ayran' de ekleyin? (%86 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap",
+    "oneri": "Ayran",
+    "confidence": 0.866,
+    "lift": 1.599,
+    "support": 0.119,
+    "oneri_metni": "'Adana Kebap' ile birlikte 'Ayran' de ekleyin? (%86 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kola",
+    "oneri": "Lahmacun",
+    "confidence": 0.576,
+    "lift": 1.569,
+    "support": 0.074,
+    "oneri_metni": "'Kola' ile birlikte 'Lahmacun' de ekleyin? (%57 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Havuç Dilimi Baklava",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.858,
+    "lift": 1.567,
+    "support": 0.1,
+    "oneri_metni": "'Havuç Dilimi Baklava' ile birlikte 'Çay (Bardak)' de ekleyin? (%85 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ezme, Urfa Kebap",
+    "oneri": "Ayran",
+    "confidence": 0.845,
+    "lift": 1.56,
+    "support": 0.062,
+    "oneri_metni": "'Ezme, Urfa Kebap' ile birlikte 'Ayran' de ekleyin? (%84 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ezme, Şalgam",
+    "oneri": "Ayran",
+    "confidence": 0.84,
+    "lift": 1.551,
+    "support": 0.076,
+    "oneri_metni": "'Ezme, Şalgam' ile birlikte 'Ayran' de ekleyin? (%83 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Adana Kebap, Çay (Bardak)",
+    "oneri": "Ayran",
+    "confidence": 0.836,
+    "lift": 1.544,
+    "support": 0.053,
+    "oneri_metni": "'Adana Kebap, Çay (Bardak)' ile birlikte 'Ayran' de ekleyin? (%83 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, Çay (Bardak)",
+    "oneri": "Ayran",
+    "confidence": 0.833,
+    "lift": 1.539,
+    "support": 0.128,
+    "oneri_metni": "'Lahmacun, Çay (Bardak)' ile birlikte 'Ayran' de ekleyin? (%83 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kıymalı Pide",
+    "oneri": "Ayran",
+    "confidence": 0.829,
+    "lift": 1.531,
+    "support": 0.184,
+    "oneri_metni": "'Kıymalı Pide' ile birlikte 'Ayran' de ekleyin? (%82 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kaşarlı Pide",
+    "oneri": "Lahmacun",
+    "confidence": 0.553,
+    "lift": 1.506,
+    "support": 0.082,
+    "oneri_metni": "'Kaşarlı Pide' ile birlikte 'Lahmacun' de ekleyin? (%55 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kıymalı Pide, Çay (Bardak)",
+    "oneri": "Ayran",
+    "confidence": 0.8,
+    "lift": 1.477,
+    "support": 0.07,
+    "oneri_metni": "'Kıymalı Pide, Çay (Bardak)' ile birlikte 'Ayran' de ekleyin? (%80 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Gavurdağı Salata",
+    "oneri": "Ayran",
+    "confidence": 0.788,
+    "lift": 1.456,
+    "support": 0.074,
+    "oneri_metni": "'Gavurdağı Salata' ile birlikte 'Ayran' de ekleyin? (%78 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Künefe, Şalgam",
+    "oneri": "Ayran",
+    "confidence": 0.783,
+    "lift": 1.445,
+    "support": 0.054,
+    "oneri_metni": "'Künefe, Şalgam' ile birlikte 'Ayran' de ekleyin? (%78 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ezme",
+    "oneri": "Ayran",
+    "confidence": 0.776,
+    "lift": 1.434,
+    "support": 0.121,
+    "oneri_metni": "'Ezme' ile birlikte 'Ayran' de ekleyin? (%77 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çiğ Köfte Dürüm",
+    "oneri": "Ayran",
+    "confidence": 0.764,
+    "lift": 1.412,
+    "support": 0.092,
+    "oneri_metni": "'Çiğ Köfte Dürüm' ile birlikte 'Ayran' de ekleyin? (%76 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Patates Kızartması",
+    "oneri": "Ayran",
+    "confidence": 0.73,
+    "lift": 1.348,
+    "support": 0.064,
+    "oneri_metni": "'Hamburger Menü, Patates Kızartması' ile birlikte 'Ayran' de ekleyin? (%72 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Şalgam",
+    "oneri": "Ayran",
+    "confidence": 0.726,
+    "lift": 1.341,
+    "support": 0.154,
+    "oneri_metni": "'Şalgam' ile birlikte 'Ayran' de ekleyin? (%72 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Kola, Patates Kızartması",
+    "oneri": "Ayran",
+    "confidence": 0.723,
+    "lift": 1.335,
+    "support": 0.053,
+    "oneri_metni": "'Hamburger Menü, Kola, Patates Kızartması' ile birlikte 'Ayran' de ekleyin? (%72 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "İskender Kebap, Şıra",
+    "oneri": "Ayran",
+    "confidence": 0.722,
+    "lift": 1.332,
+    "support": 0.086,
+    "oneri_metni": "'İskender Kebap, Şıra' ile birlikte 'Ayran' de ekleyin? (%72 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü",
+    "oneri": "Ayran",
+    "confidence": 0.721,
+    "lift": 1.331,
+    "support": 0.083,
+    "oneri_metni": "'Hamburger Menü' ile birlikte 'Ayran' de ekleyin? (%72 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Hamburger Menü, Kola",
+    "oneri": "Ayran",
+    "confidence": 0.717,
+    "lift": 1.325,
+    "support": 0.069,
+    "oneri_metni": "'Hamburger Menü, Kola' ile birlikte 'Ayran' de ekleyin? (%71 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Patates Kızartması",
+    "oneri": "Ayran",
+    "confidence": 0.716,
+    "lift": 1.323,
+    "support": 0.082,
+    "oneri_metni": "'Patates Kızartması' ile birlikte 'Ayran' de ekleyin? (%71 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Şıra",
+    "oneri": "Ayran",
+    "confidence": 0.71,
+    "lift": 1.311,
+    "support": 0.09,
+    "oneri_metni": "'Şıra' ile birlikte 'Ayran' de ekleyin? (%70 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Tavuk Şiş",
+    "oneri": "Ayran",
+    "confidence": 0.705,
+    "lift": 1.303,
+    "support": 0.131,
+    "oneri_metni": "'Tavuk Şiş' ile birlikte 'Ayran' de ekleyin? (%70 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "İskender Kebap",
+    "oneri": "Ayran",
+    "confidence": 0.704,
+    "lift": 1.3,
+    "support": 0.119,
+    "oneri_metni": "'İskender Kebap' ile birlikte 'Ayran' de ekleyin? (%70 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Künefe",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.711,
+    "lift": 1.298,
+    "support": 0.124,
+    "oneri_metni": "'Künefe' ile birlikte 'Çay (Bardak)' de ekleyin? (%71 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çay (Bardak), İskender Kebap, Şıra",
+    "oneri": "Ayran",
+    "confidence": 0.7,
+    "lift": 1.293,
+    "support": 0.056,
+    "oneri_metni": "'Çay (Bardak), İskender Kebap, Şıra' ile birlikte 'Ayran' de ekleyin? (%70 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Türk Kahvesi",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.704,
+    "lift": 1.286,
+    "support": 0.141,
+    "oneri_metni": "'Türk Kahvesi' ile birlikte 'Çay (Bardak)' de ekleyin? (%70 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Karışık Izgara, Şalgam",
+    "oneri": "Ayran",
+    "confidence": 0.696,
+    "lift": 1.285,
+    "support": 0.051,
+    "oneri_metni": "'Karışık Izgara, Şalgam' ile birlikte 'Ayran' de ekleyin? (%69 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kola, Patates Kızartması",
+    "oneri": "Ayran",
+    "confidence": 0.695,
+    "lift": 1.284,
+    "support": 0.057,
+    "oneri_metni": "'Kola, Patates Kızartması' ile birlikte 'Ayran' de ekleyin? (%69 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çay (Bardak), İskender Kebap",
+    "oneri": "Ayran",
+    "confidence": 0.691,
+    "lift": 1.277,
+    "support": 0.08,
+    "oneri_metni": "'Çay (Bardak), İskender Kebap' ile birlikte 'Ayran' de ekleyin? (%69 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Lahmacun, İskender Kebap",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.693,
+    "lift": 1.265,
+    "support": 0.058,
+    "oneri_metni": "'Lahmacun, İskender Kebap' ile birlikte 'Çay (Bardak)' de ekleyin? (%69 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Kola",
+    "oneri": "Ayran",
+    "confidence": 0.685,
+    "lift": 1.265,
+    "support": 0.088,
+    "oneri_metni": "'Kola' ile birlikte 'Ayran' de ekleyin? (%68 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Fırın Sütlaç, Türk Kahvesi",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.687,
+    "lift": 1.254,
+    "support": 0.051,
+    "oneri_metni": "'Fırın Sütlaç, Türk Kahvesi' ile birlikte 'Çay (Bardak)' de ekleyin? (%68 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Karışık Izgara",
+    "oneri": "Ayran",
+    "confidence": 0.678,
+    "lift": 1.252,
+    "support": 0.071,
+    "oneri_metni": "'Karışık Izgara' ile birlikte 'Ayran' de ekleyin? (%67 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çay (Bardak), Şıra",
+    "oneri": "Ayran",
+    "confidence": 0.674,
+    "lift": 1.245,
+    "support": 0.058,
+    "oneri_metni": "'Çay (Bardak), Şıra' ile birlikte 'Ayran' de ekleyin? (%67 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "İskender Kebap",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.68,
+    "lift": 1.243,
+    "support": 0.115,
+    "oneri_metni": "'İskender Kebap' ile birlikte 'Çay (Bardak)' de ekleyin? (%68 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "İskender Kebap, Şıra",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.675,
+    "lift": 1.233,
+    "support": 0.08,
+    "oneri_metni": "'İskender Kebap, Şıra' ile birlikte 'Çay (Bardak)' de ekleyin? (%67 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Şıra",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.675,
+    "lift": 1.232,
+    "support": 0.086,
+    "oneri_metni": "'Şıra' ile birlikte 'Çay (Bardak)' de ekleyin? (%67 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, Lahmacun, İskender Kebap",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.669,
+    "lift": 1.222,
+    "support": 0.051,
+    "oneri_metni": "'Ayran, Lahmacun, İskender Kebap' ile birlikte 'Çay (Bardak)' de ekleyin? (%66 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Ayran, İskender Kebap",
+    "oneri": "Çay (Bardak)",
+    "confidence": 0.668,
+    "lift": 1.22,
+    "support": 0.08,
+    "oneri_metni": "'Ayran, İskender Kebap' ile birlikte 'Çay (Bardak)' de ekleyin? (%66 müşteri tercih etti)"
+  },
+  {
+    "tetikleyici": "Çay (Bardak), Şalgam",
+    "oneri": "Ayran",
+    "confidence": 0.653,
+    "lift": 1.206,
+    "support": 0.064,
+    "oneri_metni": "'Çay (Bardak), Şalgam' ile birlikte 'Ayran' de ekleyin? (%65 müşteri tercih etti)"
+  }
+]

@@ -1,0 +1,16 @@
+/home/sirac/tbtk/src/CafeML.Infrastructure/bin/Debug/net8.0/CafeML.Infrastructure.deps.json
+/home/sirac/tbtk/src/CafeML.Infrastructure/bin/Debug/net8.0/CafeML.Infrastructure.dll
+/home/sirac/tbtk/src/CafeML.Infrastructure/bin/Debug/net8.0/CafeML.Infrastructure.pdb
+/home/sirac/tbtk/src/CafeML.Infrastructure/bin/Debug/net8.0/CafeML.Core.dll
+/home/sirac/tbtk/src/CafeML.Infrastructure/bin/Debug/net8.0/CafeML.Core.pdb
+/home/sirac/tbtk/src/CafeML.Infrastructure/obj/Debug/net8.0/CafeML.Infrastructure.csproj.AssemblyReference.cache
+/home/sirac/tbtk/src/CafeML.Infrastructure/obj/Debug/net8.0/CafeML.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/home/sirac/tbtk/src/CafeML.Infrastructure/obj/Debug/net8.0/CafeML.Infrastructure.AssemblyInfoInputs.cache
+/home/sirac/tbtk/src/CafeML.Infrastructure/obj/Debug/net8.0/CafeML.Infrastructure.AssemblyInfo.cs
+/home/sirac/tbtk/src/CafeML.Infrastructure/obj/Debug/net8.0/CafeML.Infrastructure.csproj.CoreCompileInputs.cache
+/home/sirac/tbtk/src/CafeML.Infrastructure/obj/Debug/net8.0/CafeML.Infrastructure.csproj.CopyComplete
+/home/sirac/tbtk/src/CafeML.Infrastructure/obj/Debug/net8.0/CafeML.Infrastructure.dll
+/home/sirac/tbtk/src/CafeML.Infrastructure/obj/Debug/net8.0/refint/CafeML.Infrastructure.dll
+/home/sirac/tbtk/src/CafeML.Infrastructure/obj/Debug/net8.0/CafeML.Infrastructure.pdb
+/home/sirac/tbtk/src/CafeML.Infrastructure/obj/Debug/net8.0/ref/CafeML.Infrastructure.dll
+/home/sirac/tbtk/src/CafeML.Infrastructure/obj/Debug/net8.0/CafeML.Infrastructure.sourcelink.json

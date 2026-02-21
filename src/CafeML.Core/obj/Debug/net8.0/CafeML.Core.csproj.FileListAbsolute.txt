@@ -1,0 +1,12 @@
+/home/sirac/tbtk/src/CafeML.Core/bin/Debug/net8.0/CafeML.Core.deps.json
+/home/sirac/tbtk/src/CafeML.Core/bin/Debug/net8.0/CafeML.Core.dll
+/home/sirac/tbtk/src/CafeML.Core/bin/Debug/net8.0/CafeML.Core.pdb
+/home/sirac/tbtk/src/CafeML.Core/obj/Debug/net8.0/CafeML.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/sirac/tbtk/src/CafeML.Core/obj/Debug/net8.0/CafeML.Core.AssemblyInfoInputs.cache
+/home/sirac/tbtk/src/CafeML.Core/obj/Debug/net8.0/CafeML.Core.AssemblyInfo.cs
+/home/sirac/tbtk/src/CafeML.Core/obj/Debug/net8.0/CafeML.Core.csproj.CoreCompileInputs.cache
+/home/sirac/tbtk/src/CafeML.Core/obj/Debug/net8.0/CafeML.Core.sourcelink.json
+/home/sirac/tbtk/src/CafeML.Core/obj/Debug/net8.0/CafeML.Core.dll
+/home/sirac/tbtk/src/CafeML.Core/obj/Debug/net8.0/refint/CafeML.Core.dll
+/home/sirac/tbtk/src/CafeML.Core/obj/Debug/net8.0/CafeML.Core.pdb
+/home/sirac/tbtk/src/CafeML.Core/obj/Debug/net8.0/ref/CafeML.Core.dll
