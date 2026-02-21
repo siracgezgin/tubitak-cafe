@@ -45,11 +45,14 @@ curl -X POST http://localhost:5000/api/seed
   "masalar": 24,
   "urunler": 45,
   "musteriler": 500,
-  "siparisler": 5000,
-  "siparisSatirlari": 18432,
+  "siparisler": 10000,
+  "siparisSatirlari": 35000,
   "kullanicilar": 4
 }
 ```
+
+> ⚠️ **InMemory'de restart sonrası veri kaybolur.** Her `dotnet run` sonrasında tekrar `POST /api/seed` çağırın.
+> Apriori modeli seed sonrasında ilk endpoint isteğiyle otomatik eğitilir (~580ms).
 
 ### 4. Frontend'i Çalıştır
 
@@ -57,14 +60,14 @@ curl -X POST http://localhost:5000/api/seed
 # Yeni terminal aç
 cd frontend
 npm install
-npm run start
+npm run dev
 ```
 
-Frontend `http://localhost:5173` adresinde başlar.
+Frontend `http://localhost:3000` adresinde başlar.
 
 ### 5. Giriş Yap
 
-`http://localhost:5173/login` adresine git:
+`http://localhost:3000/login` adresine git:
 
 | Kullanıcı | Şifre | Rol |
 |---|---|---|
@@ -248,7 +251,7 @@ sudo apt-get install -y libgomp1
 ```
 
 ### CORS hatası
-Frontend `http://localhost:5173`'ten istek atıyorsa, `Program.cs` CORS listesinde bu origin olduğundan emin olun.
+Frontend `http://localhost:3000`'den istek atıyorsa, `Program.cs` CORS listesinde bu origin olduğundan emin olun.
 
 ### InMemory'de veri gitmesi
 InMemory veritabanı uygulama her yeniden başladığında sıfırlanır. Her restart sonrası `POST /api/seed` ile yeniden seed yapın.

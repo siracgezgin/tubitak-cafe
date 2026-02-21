@@ -137,6 +137,8 @@ private string GetSegmentName(int clusterId, CustomerRfmData customer)
 ### Kullanılan Teknoloji
 **Matrix Factorization** → ML.NET `MatrixFactorizationTrainer`
 
+> Sistemde iki ayrı öneri yaklaşımı çalışmaktadır: **Matrix Factorization** (kişisel) ve **Apriori Market Basket Analysis** (sepet bazlı). Detaylar aşağıda.
+
 ### İki Tür Öneri
 
 #### A) Kişiselleştirilmiş Öneri (`/api/recommendations/customer/{id}`)
@@ -191,6 +193,92 @@ LIMIT 5
 
 ---
 
+## 4. Apriori Market Basket Analysis
+
+### Kullanılan Teknoloji
+Saf C# implementasyonu — `AprioriRecommender` singleton servisi. ML.NET **kullanılmaz**; gerçek `FolyoHar` ve `SiparisTalepSatir` verisinden co-occurrence hesabı yapılır.
+
+### Nasıl Çalışır?
+
+#### Adım 1: Transaction Yükleme
+```
+FolyoHar   → GROUP BY FolyoId         → her fatura = bir alışveriş sepeti
+SiparisTalepSatir → GROUP BY TalepId  → her talep = bir sipariş sepeti
+Toplam: ~10.000+ transaction
+```
+
+#### Adım 2: Frekans Hesabı
+```
+Her ürün için: support(A) = count(A) / totalTransactions
+Min support: %0.5 (en az 50/10.000 siparişte geçmeli)
+```
+
+#### Adım 3: Co-occurrence (2-itemset)
+$$\text{support}(A \cup B) = \frac{\text{count}(A \cap B)}{\text{totalTransactions}}$$
+
+#### Adım 4: Birliktelik Kuralları
+$$\text{confidence}(A \Rightarrow B) = \frac{\text{support}(A \cup B)}{\text{support}(A)}$$
+$$\text{lift}(A \Rightarrow B) = \frac{\text{confidence}(A \Rightarrow B)}{\text{support}(B)}$$
+
+**Eşikler:**
+| Metrik | Eşik |
+|---|---|
+| Minimum Support | 0.005 (%0.5) |
+| Minimum Confidence | 0.10 (%10) |
+| Minimum Lift | 1.0 |
+
+#### Adım 5: 3-itemset (Opsiyonel)
+En sık satılan ilk 30 ürün kombinasyonları için 3-öge kuralları da üretilir: `{A, B} → C`.
+
+### Mimari
+
+```csharp
+// Interface (Core)
+public interface IAprioriRecommender {
+    Task<IEnumerable<AssociationRule>> GetTopRulesAsync(int topN = 20);
+    Task<IEnumerable<BasketRecommendation>> RecommendFromBasketAsync(IEnumerable<int> basketIds, int topN = 5);
+    Task<IEnumerable<ProductPairFrequency>> GetTopPairsAsync(int topN = 15);
+    Task RetrainAsync();
+}
+
+// Kayıt (Singleton — IServiceScopeFactory ile DbContext)
+builder.Services.AddSingleton<IAprioriRecommender, AprioriRecommender>();
+```
+
+### Performans
+- 10.000 transaction üzerinde eğitim süresi: **~580ms**
+- Üretilen tipik kural sayısı: **~109 kural, ~242 çift**
+- Önbellek TTL: **30 dakika** (sonrasında otomatik yeniden eğitim)
+- Örnek kural: `{Pizza} → {Ayran}` · Güven %12.4 · Lift 1.09
+
+### Python ile Offline Analiz
+
+`ml_data/` klasöründe Python tabanlı referans analiz scriptleri bulunur:
+
+```bash
+cd ml_data
+python generate_dataset.py   # 2000 sipariş içeren sentetik dataset üretir
+python apriori_train.py      # mlxtend ile Apriori eğitir, 300 kural çıkarır
+```
+
+Kurulum:
+```bash
+conda install -c conda-forge mlxtend pandas numpy
+```
+
+Çıktı dosyaları:
+| Dosya | Açıklama |
+|---|---|
+| `orders_full.json` | 2000 sipariş tam detay |
+| `market_basket.csv` | One-hot format (mlxtend girdi) |
+| `association_rules.csv` | 300 kural (support, confidence, lift) |
+| `menu_oneriler.json` | 216 yüksek güvenli kural (API fallback için) |
+
+Python analizinde bulunan en güçlü kural:  
+`{Hamburger Menü, Lahmacun} → {Ayran, Patates Kızartması}` · Destek=%5.1 · Güven=%74.1 · **Lift=9.04**
+
+---
+
 ## Model Eğitim Stratejisi
 
 ### Lazy Training (Tembel Eğitim)
@@ -228,6 +316,7 @@ Ya da Hangfire ile periyodik olarak (günlük, haftalık) zamanlanabilir.
 | SsaSalesForecaster | 30 günlük satış | Boş liste döner |
 | KMeansCustomerSegmenter | En az 4 kayıtlı müşteri | Boş liste döner |
 | MatrixFactorizationRecommender | En az 10 müşteri–ürün etkileşimi | Boş liste döner |
+| AprioriRecommender | En az 50 transaction (min support=%0.5) | Boş kural listesi döner |
 
 ---
 

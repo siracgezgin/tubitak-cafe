@@ -6,7 +6,7 @@
 - **Build Tool**: Vite 7
 - **UI Kütüphanesi**: Material UI (MUI) v7
 - **Şablon**: Mantis Dashboard (CodedThemes — free tier)
-- **Dev Port**: `http://localhost:5173`
+- **Dev Port**: `http://localhost:3000`
 
 ---
 
@@ -85,12 +85,26 @@ Ana kontrol paneli. Şunları gösterir:
 ---
 
 ### 💡 RecommendationsPage (`/recommendations`)
-`/api/recommendations/customer/{id}` ve `/api/recommendations/product/{id}` kullanır.
+İki sekme ile iki farklı ML yaklaşımını görselleştirir.
 
-**Özellikler:**
-- Müşteri ID girilerek kişiselleştirilmiş öneri
-- Ürün seçilerek "Bunu alanlar ne aldı?" önerisi
-- Skor çubuğu görselleştirmesi
+#### Sekme 0 — Kişisel Öneri (Matrix Factorization)
+- `/api/recommendations/customer/{id}` → müşteriye özel ürün önerileri
+- `/api/recommendations/product/{id}` → "Bunu alanlar ne aldı?" önerisi
+- Skor yıldız derecelendirmesi (`Rating`) ile görselleştirme
+
+#### Sekme 1 — Pazar Sepeti (Apriori Market Basket)
+- **Birliktelik Kuralları tablosu**: X → Y, Güven progress bar, Lift renk chip'i (yeşil/sarı/kırmızı)
+- **Sepet Önerisi widget**: Stok Kartı ID'leri virgülle gir → anlık öneri listesi
+- **En Sık Birlikte Satılanlar**: Ürün çiftleri + kaç kez birlikte alındığı
+- **"Yeniden Eğit" butonu**: `/api/recommendations/rules/retrain` çağırır
+
+**Lift renk kodlaması:**
+| Lift Değeri | Renk | Anlam |
+|---|---|---|
+| ≥ 4.0 | 🔴 error | Çok güçlü ilişki |
+| ≥ 2.5 | 🟡 warning | Güçlü ilişki |
+| ≥ 1.5 | 🟢 success | Anlamlı ilişki |
+| < 1.5 | ⚪ default | Zayıf ilişki |
 
 ---
 

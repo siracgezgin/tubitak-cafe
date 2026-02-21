@@ -199,11 +199,13 @@ Tüm endpoint'ler **Admin veya SubAdmin** rolü gerektirir.
 
 ## ML — Ürün Önerileri Endpoint'leri
 
+### Matrix Factorization (Kişisel Öneri)
+
 | Method | Endpoint | Açıklama |
 |---|---|---|
 | `GET` | `/api/recommendations/customer/{id}?top=5` | Müşteriye özel ürün önerileri |
 | `GET` | `/api/recommendations/product/{id}?top=5` | "Bunu alanlar bunları da aldı" |
-| `POST` | `/api/recommendations/retrain` | Modeli yeniden eğit |
+| `POST` | `/api/recommendations/retrain` | Matrix Factorization modelini yeniden eğit |
 
 ### Öneri Response:
 ```json
@@ -214,6 +216,59 @@ Tüm endpoint'ler **Admin veya SubAdmin** rolü gerektirir.
     { "urunId": 8,  "urunAdi": "Cheesecake", "skor": 72.1 }
   ]
 }
+```
+
+---
+
+## ML — Apriori Market Basket Endpoint'leri
+
+| Method | Endpoint | Açıklama |
+|---|---|---|
+| `GET` | `/api/recommendations/rules?top=20` | En güçlü birliktelik kuralları |
+| `GET` | `/api/recommendations/basket?urunler=1,3,7&top=5` | Sepetteki ürünlere göre "şunu da ekle" önerisi |
+| `GET` | `/api/recommendations/pairs?top=15` | En sık birlikte satılan ürün çiftleri |
+| `POST` | `/api/recommendations/rules/retrain` | Apriori modelini yeniden eğit (önbelleği temizler) |
+
+### Birliktelik Kuralları Response:
+```json
+{
+  "toplamKural": 109,
+  "kurallar": [
+    {
+      "antecedent": "Türk Kahvesi",
+      "consequent": "Künefe",
+      "support": 1.2,
+      "confidence": 10.4,
+      "lift": 1.26,
+      "actionText": "Türk Kahvesi ile birlikte %10 oranında Künefe de sipariş edildi"
+    }
+  ]
+}
+```
+> **Not**: `support` ve `confidence` değerleri yüzde cinsinden döner (örn. `10.4` → `%10.4`).
+
+### Sepet Önerisi Response:
+```json
+{
+  "sepetUrunleri": [1, 3],
+  "oneriler": [
+    {
+      "productId": 39,
+      "productName": "Kazandibi",
+      "confidence": 10.2,
+      "lift": 1.17,
+      "reason": "Hamburger ile birlikte %10 oranında alınıyor"
+    }
+  ]
+}
+```
+
+### En Sık Çiftler Response:
+```json
+[
+  { "productAName": "Pizza", "productBName": "Ayran", "count": 173, "support": 1.73 },
+  { "productAName": "Cheeseburger", "productBName": "Americano", "count": 150, "support": 1.50 }
+]
 ```
 
 ---
